@@ -12,10 +12,8 @@ nav:
   - Inici: index.md
   - Permisos, usuaris i grups: permisos-usuaris-grups.md
   - Processos i recursos del sistema: processos-recursos-sistema.md
-  - Gestió de paquets: gestio-paquets.md
   - Xarxa: xarxa.md
-  - Sistemes de fitxers: sistemes-fitxers.md
-  - Transferència de fitxers: transferencia-fitxers.md
+  - Servidor: servidor.md
 
 plugins:
   - search
