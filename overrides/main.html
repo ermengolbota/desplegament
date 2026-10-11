@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% macro article_toc(items, depth=0) %}
+  {% for heading in items %}
+    {% if heading.level == 1 %}
+      {{ article_toc(heading.children, depth) }}
+    {% else %}
+      <li class="sidebar-toc-item" style="--toc-depth: {{ depth }}">
+        <div class="sidebar-toc-row">
+          <a href="{{ page.url|url }}{{ heading.url }}">{{ heading.title }}</a>
+          {% if heading.children %}
+            <button type="button" class="sidebar-toc-toggle" hidden
+                    aria-controls="article-toc-{{ heading.id }}" aria-expanded="true"
+                    aria-label="Subapartats de {{ heading.title|striptags }}">
+              <span aria-hidden="true"></span>
+            </button>
+          {% endif %}
+        </div>
+        {% if heading.children %}
+          <ul id="article-toc-{{ heading.id }}" class="sidebar-toc-list">
+            {{ article_toc(heading.children, depth + 1) }}
+          </ul>
+        {% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+{% macro sidebar_items(items) %}
+  <ul class="sidebar-links">
+    {% for item in items %}
+      <li{% if item.is_page and item.active %} class="current"{% endif %}>
+        {% if item.is_section %}
+          <details class="sidebar-group"{% if item.active %} open{% endif %}>
+            <summary>{{ item.title }}</summary>
+            {{ sidebar_items(item.children) }}
+          </details>
+        {% else %}
+          <a href="{{ item.url|url }}"{% if item.is_page and item.active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          {% if item.is_page and item.active and page.toc %}
+            {% set toc_content = article_toc(page.toc.items) %}
+            {% if toc_content|trim %}
+              <nav id="active-article-toc" class="sidebar-toc" aria-label="Apartats d’aquest article">
+                <ul class="sidebar-toc-list">{{ toc_content }}</ul>
+              </nav>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% block site_nav %}
+  <div id="documentation-navigation">
+    <button type="button" class="sidebar-close" data-toggle="wy-nav-top" aria-label="Tanca el menú">
+      <span aria-hidden="true">&times;</span> Tanca el menú
+    </button>
+    {{ sidebar_items(nav) }}
+  </div>
+{% endblock %}
+
+{% block mobile_nav %}
+  <button type="button" class="mobile-menu-toggle" data-toggle="wy-nav-top"
+          aria-label="Obre el menú" aria-controls="documentation-navigation" aria-expanded="false">
+    <span class="fa fa-bars" aria-hidden="true"></span>
+  </button>
+  <a href="{{ nav.homepage.url|url }}">{{ config.site_name }}</a>
+{% endblock %}

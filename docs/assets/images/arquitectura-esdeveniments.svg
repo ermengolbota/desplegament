@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="780" viewBox="0 0 900 780" role="img" aria-labelledby="title description">
+  <title id="title">Arquitectura orientada a esdeveniments</title>
+  <desc id="description">Reserva confirmada → Canal d’esdeveniments. El canal apunta a Notificacions, Estadístiques i Índex de consulta.</desc>
+  <metadata id="ascii-source">Reserva confirmada
+        |
+        v
+Canal d’esdeveniments
+        +--&gt; Notificacions
+        +--&gt; Estadístiques
+        +--&gt; Índex de consulta
+</metadata>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#354552"/></marker></defs>
+  <style>text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; } .connector { fill: none; stroke: #354552; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }</style>
+  <rect x="1" y="1" width="898" height="778" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <text x="450.0" y="31" text-anchor="middle" font-size="24" font-weight="700" fill="#354552">Arquitectura orientada a esdeveniments</text>
+  <path class="connector" d="M 200 170 V 236" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 200 340 V 685"/>
+  <path class="connector" d="M 200 405 H 446" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 200 545 H 446" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 200 685 H 446" marker-end="url(#arrow)"/>
+  <g id="source" class="diagram-node">
+    <rect x="30" y="80" width="340" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="200.0" y="125.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Reserva confirmada</text>
+  </g>
+  <g id="root" class="diagram-node">
+    <rect x="30" y="240" width="340" height="100" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="200.0" y="290.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Canal d’esdeveniments</text>
+  </g>
+  <g id="branch-1" class="diagram-node">
+    <rect x="450" y="360" width="420" height="90" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="660.0" y="405.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Notificacions</text>
+  </g>
+  <g id="branch-2" class="diagram-node">
+    <rect x="450" y="500" width="420" height="90" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="660.0" y="545.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Estadístiques</text>
+  </g>
+  <g id="branch-3" class="diagram-node">
+    <rect x="450" y="640" width="420" height="90" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="660.0" y="685.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Índex de consulta</text>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="240" viewBox="0 0 1240 240" role="img" aria-labelledby="title description">
+  <title id="title">Vista de desplegament</title>
+  <desc id="description">Navegador — HTTPS — Aplicació — protocol de dades — Base de dades. Les connexions no tenen fletxes.</desc>
+  <metadata id="ascii-source">Navegador ---- HTTPS ---- Aplicació ---- protocol de dades ---- Base de dades
+</metadata>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#354552"/></marker></defs>
+  <style>text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; } .connector { fill: none; stroke: #354552; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }</style>
+  <rect x="1" y="1" width="1238" height="238" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <text x="620.0" y="31" text-anchor="middle" font-size="24" font-weight="700" fill="#354552">Vista de desplegament</text>
+  <path class="connector" d="M 290 150 H 490"/>
+  <text x="390" y="130" text-anchor="middle" font-size="22" fill="#354552">HTTPS</text>
+  <path class="connector" d="M 750 150 H 950"/>
+  <text x="850" y="130" text-anchor="middle" font-size="22" fill="#354552">protocol de dades</text>
+  <g id="browser" class="diagram-node">
+    <rect x="30" y="105" width="260" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="160.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Navegador</text>
+  </g>
+  <g id="application" class="diagram-node">
+    <rect x="490" y="105" width="260" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="620.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Aplicació</text>
+  </g>
+  <g id="database" class="diagram-node">
+    <rect x="950" y="105" width="260" height="90" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="1080.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Base de dades</text>
+  </g>
+</svg>

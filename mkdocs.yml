@@ -7,19 +7,29 @@ edit_uri: edit/main/docs/
 
 theme:
   name: readthedocs
+  custom_dir: overrides
 
 nav:
   - Inici: index.md
-  - Permisos, usuaris i grups: permisos-usuaris-grups.md
-  - Processos i recursos del sistema: processos-recursos-sistema.md
-  - Xarxa: xarxa.md
-  - Servidor: servidor.md
+  - Bàsic:
+      - Permisos, usuaris i grups: basic/permisos-usuaris-grups.md
+      - Processos i recursos del sistema: basic/processos-recursos-sistema.md
+      - Xarxa: basic/xarxa.md
+      - Servidor: basic/servidor.md
+  - La Web:
+      - Bases de la WWW: la-web/bases-www.md
+      - Arquitectura Client Servidor: la-web/arquitectura-client-servidor.md
+      - Arquitectura d'una aplicació web: la-web/arquitectura-aplicacio-web.md
+
 
 plugins:
   - search
 
 extra_css:
   - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/navigation.js
 
 markdown_extensions:
   - admonition

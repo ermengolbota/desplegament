@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120" role="img" aria-labelledby="title description">
+  <title id="title">Mapa mental de l'arquitectura client-servidor</title>
+  <desc id="description">L'arquitectura client-servidor organitza rols de programari que intercanvien peticions i respostes HTTP. Vuit branques resumeixen el model, els clients web, els robots, els servidors, els intermediaris, el funcionament de la memòria cau, les polítiques i els validadors, i el cas pràctic amb els materials de repàs. La memòria cau inclou frescor, Cache-Control, max-age, s-maxage, no-cache, no-store, ETag, Last-Modified, 304 i Vary. Els números corresponen als apartats de l'article.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .node-title { font-size: 24px; font-weight: 700; }
+    .node-text { font-size: 20px; fill: #263b4a; }
+    .branch { fill: none; stroke-width: 4; stroke-linecap: round; }
+    .card { stroke-width: 2; }
+  </style>
+  <rect x="1" y="1" width="1198" height="1118" rx="20" fill="#fafbfc" stroke="#d6dce2" stroke-width="2"/>
+  <text x="600" y="36" text-anchor="middle" font-size="24" font-weight="600" fill="#435967">Mapa mental · Arquitectura client-servidor</text>
+
+  <!-- Connexions entre el concepte central i les vuit branques. -->
+  <g class="branch">
+    <path d="M 444 470 C 408 470 422 174 384 174" stroke="#17689b"/>
+    <path d="M 444 515 C 414 515 414 424 384 424" stroke="#12756e"/>
+    <path d="M 444 560 C 414 560 414 674 384 674" stroke="#7251a4"/>
+    <path d="M 444 605 C 408 605 422 924 384 924" stroke="#4e61a6"/>
+    <path d="M 756 470 C 792 470 778 174 816 174" stroke="#a65b16"/>
+    <path d="M 756 515 C 786 515 786 424 816 424" stroke="#23734d"/>
+    <path d="M 756 560 C 786 560 786 674 816 674" stroke="#a33d58"/>
+    <path d="M 756 605 C 792 605 778 924 816 924" stroke="#647788"/>
+  </g>
+
+  <g text-anchor="middle">
+    <rect x="444" y="434" width="312" height="232" rx="24" fill="#163a52"/>
+    <g font-size="32" font-weight="700" fill="#fff">
+      <text x="600" y="477">Arquitectura</text>
+      <text x="600" y="514">client-servidor</text>
+    </g>
+    <line x1="466" y1="536" x2="734" y2="536" stroke="#64879d"/>
+    <text x="600" y="571" font-size="22" fill="#fff">Petició → resposta</text>
+    <text x="600" y="608" font-size="21" fill="#fff">Rols de programari</text>
+    <text x="600" y="643" font-size="19" fill="#cce3f1">Un servei, diverses capes</text>
+  </g>
+
+  <!-- Branques de l'esquerra. -->
+  <g>
+    <rect class="card" x="24" y="64" width="360" height="220" rx="14" fill="#eaf4fb" stroke="#17689b"/>
+    <text class="node-title" x="44" y="105" fill="#164e73">1. El model client-servidor</text>
+    <g class="node-text">
+      <text x="44" y="151">Client: inicia peticions</text>
+      <text x="44" y="178">Servidor: genera respostes</text>
+      <text x="44" y="205">Rols, no màquines fixes</text>
+      <text x="44" y="232">Components locals o distribuïts</text>
+      <text x="44" y="259">Escalabilitat amb límits</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="24" y="314" width="360" height="220" rx="14" fill="#e9f6f3" stroke="#12756e"/>
+    <text class="node-title" x="44" y="355" fill="#105d57">2. Els clients web</text>
+    <g class="node-text">
+      <text x="44" y="401">Navegador · API · monitors</text>
+      <text x="44" y="428">DOM · CSS · JavaScript</text>
+      <text x="44" y="455">Origen i CORS</text>
+      <text x="44" y="482">Cookies ≠ sessions</text>
+      <text x="44" y="509">Service worker i Cache API</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="24" y="564" width="360" height="220" rx="14" fill="#f3eef9" stroke="#7251a4"/>
+    <text class="node-title" x="44" y="605" fill="#5c3d8a">3. Rastrejadors i robots</text>
+    <g class="node-text">
+      <text x="44" y="651">Descobrir · renderitzar · indexar</text>
+      <text x="44" y="678">robots.txt: regles de rastreig</text>
+      <text x="44" y="705">noindex ≠ nofollow</text>
+      <text x="44" y="732">No són controls d’accés</text>
+      <text x="44" y="759">Limitar càrrega i reintents</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="24" y="814" width="360" height="220" rx="14" fill="#eef1fb" stroke="#4e61a6"/>
+    <text class="node-title" x="44" y="855" fill="#3f4f88">4. Els servidors web</text>
+    <g class="node-text">
+      <text x="44" y="901">Recursos estàtics i dinàmics</text>
+      <text x="44" y="928">Web i lògica d’aplicació</text>
+      <text x="44" y="955">Autenticació ≠ autorització</text>
+      <text x="44" y="982">Controls d’accés al servidor</text>
+      <text x="44" y="1009">Concurrència i balanceig</text>
+    </g>
+  </g>
+
+  <!-- Branques de la dreta. -->
+  <g>
+    <rect class="card" x="816" y="64" width="360" height="220" rx="14" fill="#fff3e6" stroke="#a65b16"/>
+    <text class="node-title" x="836" y="105" fill="#854810">5. Intermediaris web</text>
+    <g class="node-text">
+      <text x="836" y="151">Directe: en nom del client</text>
+      <text x="836" y="178">Invers: davant del servei</text>
+      <text x="836" y="205">Passarel·la · túnel CONNECT</text>
+      <text x="836" y="232">CDN: distribució de contingut</text>
+      <text x="836" y="259">Proxy ≠ memòria cau</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="816" y="314" width="360" height="220" rx="14" fill="#e9f5ee" stroke="#23734d"/>
+    <text class="node-title" x="836" y="355" fill="#205b3e">6. La memòria cau HTTP</text>
+    <g class="node-text">
+      <text x="836" y="401">Privada o compartida</text>
+      <text x="836" y="428">Encert (hit) · fallada (miss)</text>
+      <text x="836" y="455">Frescor: edat &lt; límit permès</text>
+      <text x="836" y="482">Caducitat ≠ còpia esborrada</text>
+      <text x="836" y="509">Menys trànsit, latència i càrrega</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="816" y="564" width="360" height="220" rx="14" fill="#fceef2" stroke="#a33d58"/>
+    <text class="node-title" x="836" y="605" fill="#862f46">6. Polítiques i validació</text>
+    <g class="node-text">
+      <text x="836" y="651">max-age / s-maxage: frescor</text>
+      <text x="836" y="678">no-cache: cal revalidar</text>
+      <text x="836" y="705">no-store: no emmagatzemar</text>
+      <text x="836" y="732">ETag i Last-Modified: validadors</text>
+      <text x="836" y="759">304: cos guardat · Vary: variants</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="816" y="814" width="360" height="220" rx="14" fill="#f0f3f6" stroke="#647788"/>
+    <text class="node-title" x="836" y="855" fill="#435967">7–11. Cas pràctic i repàs</text>
+    <g class="node-text">
+      <text x="836" y="901">Campus: CDN, balanç i aplicació</text>
+      <text x="836" y="928">Recurs públic ≠ dada personal</text>
+      <text x="836" y="955">Diagnòstic: versions, capçaleres,</text>
+      <text x="836" y="982">capes de memòria cau i logs</text>
+      <text x="836" y="1009">Exercicis · glossari · fonts</text>
+    </g>
+  </g>
+  <text x="600" y="1080" text-anchor="middle" font-size="21" fill="#435967">Control d’accés ≠ control de memòria cau. Cal identificar les capes i mesurar els beneficis.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title description">
+  <title id="title">Treball en segon pla i cues</title>
+  <desc id="description">Aplicació → Registre de feina / cua → Treballador. Una altra branca va directament d’Aplicació a Resposta a l’usuari.</desc>
+  <metadata id="ascii-source">Aplicació ----&gt; Registre de feina / cua ----&gt; Treballador
+     |
+     +----&gt; Resposta a l’usuari
+</metadata>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#354552"/></marker></defs>
+  <style>text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; } .connector { fill: none; stroke: #354552; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }</style>
+  <rect x="1" y="1" width="1198" height="448" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <text x="600.0" y="31" text-anchor="middle" font-size="24" font-weight="700" fill="#354552">Treball en segon pla i cues</text>
+  <path class="connector" d="M 310 145 H 426" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 770 150 H 886" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 170 190 V 375 H 426" marker-end="url(#arrow)"/>
+  <g id="application" class="diagram-node">
+    <rect x="30" y="100" width="280" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="170.0" y="145.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Aplicació</text>
+  </g>
+  <g id="queue" class="diagram-node">
+    <rect x="430" y="100" width="340" height="100" rx="10" fill="#f3f5f7" stroke="#647788" stroke-width="2"/>
+    <text x="600.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#354552">Registre de feina / cua</text>
+  </g>
+  <g id="worker" class="diagram-node">
+    <rect x="890" y="100" width="280" height="100" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="1030.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Treballador</text>
+  </g>
+  <g id="response" class="diagram-node">
+    <rect x="430" y="330" width="340" height="90" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="600.0" y="375.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Resposta a l’usuari</text>
+  </g>
+</svg>

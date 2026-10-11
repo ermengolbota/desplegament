@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120" role="img" aria-labelledby="title description">
+  <title id="title">Mapa mental de les bases de la World Wide Web</title>
+  <desc id="description">Les tres funcions centrals de la Web són identificar recursos amb URI i URL, representar contingut amb HTML i comunicar mitjançant HTTP. Vuit branques resumeixen l'article: la WWW, l'hipertext i la hipermèdia, els identificadors URI, URL, URN i IRI, la sintaxi d'URL, HTML, HTTP, la codificació i la pràctica amb exercicis, glossari i referències. Els números de les branques corresponen als apartats de l'article.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .node-title { font-size: 24px; font-weight: 700; }
+    .node-text { font-size: 20px; fill: #263b4a; }
+    .branch { fill: none; stroke-width: 4; stroke-linecap: round; }
+    .card { stroke-width: 2; }
+  </style>
+  <rect x="1" y="1" width="1198" height="1118" rx="20" fill="#fafbfc" stroke="#d6dce2" stroke-width="2"/>
+  <text x="600" y="36" text-anchor="middle" font-size="24" font-weight="600" fill="#435967">Mapa mental · Bases de la WWW</text>
+
+  <!-- Connexions entre el concepte central i les vuit branques. -->
+  <g class="branch">
+    <path d="M 444 470 C 408 470 422 174 384 174" stroke="#17689b"/>
+    <path d="M 444 515 C 414 515 414 424 384 424" stroke="#12756e"/>
+    <path d="M 444 560 C 414 560 414 674 384 674" stroke="#7251a4"/>
+    <path d="M 444 605 C 408 605 422 924 384 924" stroke="#4e61a6"/>
+    <path d="M 756 470 C 792 470 778 174 816 174" stroke="#a65b16"/>
+    <path d="M 756 515 C 786 515 786 424 816 424" stroke="#23734d"/>
+    <path d="M 756 560 C 786 560 786 674 816 674" stroke="#a33d58"/>
+    <path d="M 756 605 C 792 605 778 924 816 924" stroke="#647788"/>
+  </g>
+
+  <!-- Concepte central: apartat 3. -->
+  <g text-anchor="middle">
+    <rect x="444" y="434" width="312" height="232" rx="24" fill="#163a52"/>
+    <text x="600" y="477" font-size="32" font-weight="700" fill="#fff">Bases de la WWW</text>
+    <text x="600" y="510" font-size="19" fill="#cce3f1">3. Les funcions fonamentals</text>
+    <line x1="466" y1="528" x2="734" y2="528" stroke="#64879d"/>
+    <g font-size="21" fill="#fff">
+      <text x="600" y="561">Identificar · URI / URL</text>
+      <text x="600" y="598">Representar · HTML</text>
+      <text x="600" y="635">Comunicar · HTTP</text>
+    </g>
+  </g>
+
+  <!-- Branques de l'esquerra. -->
+  <g>
+    <rect class="card" x="24" y="64" width="360" height="220" rx="14" fill="#eaf4fb" stroke="#17689b"/>
+    <text class="node-title" x="44" y="105" fill="#164e73">1. La World Wide Web</text>
+    <g class="node-text">
+      <text x="44" y="151">Internet: infraestructura</text>
+      <text x="44" y="178">Web: recursos i serveis</text>
+      <text x="44" y="205">Recurs ≠ representació</text>
+      <text x="44" y="232">Lloc, pàgina i aplicació web</text>
+      <text x="44" y="259">Origen: CERN, 1989–1993</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="24" y="314" width="360" height="220" rx="14" fill="#e9f6f3" stroke="#12756e"/>
+    <text class="node-title" x="44" y="355" fill="#105d57">2. Hipertext i hipermèdia</text>
+    <g class="node-text">
+      <text x="44" y="401">Enllaços: itineraris de lectura</text>
+      <text x="44" y="428">href: destinació de l’enllaç</text>
+      <text x="44" y="455">Hipermèdia: text, imatge,</text>
+      <text x="44" y="482">àudio i vídeo connectats</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="24" y="564" width="360" height="220" rx="14" fill="#f3eef9" stroke="#7251a4"/>
+    <text class="node-title" x="44" y="605" fill="#5c3d8a">4. URI, URL, URN i IRI</text>
+    <g class="node-text">
+      <text x="44" y="651">URI: identificador amb esquema</text>
+      <text x="44" y="678">URL: localització o accés</text>
+      <text x="44" y="705">URN: intenció de persistència</text>
+      <text x="44" y="732">IRI: caràcters Unicode</text>
+      <text x="44" y="759">IETF i WHATWG: dos marcs</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="24" y="814" width="360" height="220" rx="14" fill="#eef1fb" stroke="#4e61a6"/>
+    <text class="node-title" x="44" y="855" fill="#3f4f88">5. Sintaxi d’URL</text>
+    <g class="node-text">
+      <text x="44" y="901">Esquema · autoritat · camí</text>
+      <text x="44" y="928">Consulta · fragment</text>
+      <text x="44" y="955">Referència relativa + base</text>
+      <text x="44" y="982">El fragment no s’envia per HTTP</text>
+      <text x="44" y="1009">https, http, mailto, file, urn</text>
+    </g>
+  </g>
+
+  <!-- Branques de la dreta. -->
+  <g>
+    <rect class="card" x="816" y="64" width="360" height="220" rx="14" fill="#fff3e6" stroke="#a65b16"/>
+    <text class="node-title" x="836" y="105" fill="#854810">6. HTML</text>
+    <g class="node-text">
+      <text x="836" y="151">Estructura i semàntica</text>
+      <text x="836" y="178">Enllaços, formularis i mitjans</text>
+      <text x="836" y="205">CSS: presentació</text>
+      <text x="836" y="232">JavaScript: comportament</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="816" y="314" width="360" height="220" rx="14" fill="#e9f5ee" stroke="#23734d"/>
+    <text class="node-title" x="836" y="355" fill="#205b3e">7. HTTP i HTTPS</text>
+    <g class="node-text">
+      <text x="836" y="401">Petició → resposta · sense estat</text>
+      <text x="836" y="428">Mètodes: GET, HEAD, PUT…</text>
+      <text x="836" y="455">Estats: 2xx, 3xx, 4xx, 5xx</text>
+      <text x="836" y="482">HTTP/1.1 · HTTP/2 · HTTP/3</text>
+      <text x="836" y="509">HTTPS: protecció amb TLS</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="816" y="564" width="360" height="220" rx="14" fill="#fceef2" stroke="#a33d58"/>
+    <text class="node-title" x="836" y="605" fill="#862f46">8. Codificació d’URL</text>
+    <g class="node-text">
+      <text x="836" y="651">Unicode → UTF-8 → %HH</text>
+      <text x="836" y="678">Camí: espai → %20</text>
+      <text x="836" y="705">Formulari: espai → +</text>
+      <text x="836" y="732">Signe + en formulari → %2B</text>
+      <text x="836" y="759">URL i URLSearchParams</text>
+    </g>
+  </g>
+  <g>
+    <rect class="card" x="816" y="814" width="360" height="220" rx="14" fill="#f0f3f6" stroke="#647788"/>
+    <text class="node-title" x="836" y="855" fill="#435967">9–13. Aplicar i revisar</text>
+    <g class="node-text">
+      <text x="836" y="901">URL → petició → HTML</text>
+      <text x="836" y="928">Interpretar i seguir enllaços</text>
+      <text x="836" y="955">Exercicis i criteris de repàs</text>
+      <text x="836" y="982">Glossari i fonts oficials</text>
+    </g>
+  </g>
+  <text x="600" y="1080" text-anchor="middle" font-size="21" fill="#435967">Identificar un recurs no garanteix que sigui accessible. Cada tecnologia té una funció.</text>
+</svg>

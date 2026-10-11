@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="510" viewBox="0 0 1320 510" role="img" aria-labelledby="title description">
+  <title id="title">Resolució de recursos estàtics i dinàmics</title>
+  <desc id="description">GET /imatges/logo.webp → servidor web → fitxer. GET /llibres/42 → aplicació → consulta de dades → HTML. GET /api/llibres/42 → aplicació → consulta de dades → JSON.</desc>
+  <metadata id="ascii-source">GET /imatges/logo.webp  -&gt; servidor web -&gt; fitxer
+GET /llibres/42         -&gt; aplicació    -&gt; consulta de dades -&gt; HTML
+GET /api/llibres/42     -&gt; aplicació    -&gt; consulta de dades -&gt; JSON
+</metadata>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#354552"/></marker></defs>
+  <style>text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; } .connector { fill: none; stroke: #354552; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }</style>
+  <rect x="1" y="1" width="1318" height="508" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <text x="660.0" y="31" text-anchor="middle" font-size="24" font-weight="700" fill="#354552">Resolució de recursos estàtics i dinàmics</text>
+  <path class="connector" d="M 320 145 H 416" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 650 145 H 746" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 320 285 H 416" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 650 285 H 746" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 1010 285 H 1106" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 320 425 H 416" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 650 425 H 746" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 1010 425 H 1106" marker-end="url(#arrow)"/>
+  <g id="request-0" class="diagram-node">
+    <rect x="30" y="90" width="290" height="110" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="175.0" y="129.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">GET</text>
+    <text x="175.0" y="160.60000000000002" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">/imatges/logo.webp</text>
+  </g>
+  <g id="server-0" class="diagram-node">
+    <rect x="420" y="90" width="230" height="110" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="535.0" y="145.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">servidor web</text>
+  </g>
+  <g id="data-0" class="diagram-node">
+    <rect x="750" y="90" width="260" height="110" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="880.0" y="145.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">fitxer</text>
+  </g>
+  <g id="request-1" class="diagram-node">
+    <rect x="30" y="230" width="290" height="110" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="175.0" y="269.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">GET</text>
+    <text x="175.0" y="300.59999999999997" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">/llibres/42</text>
+  </g>
+  <g id="server-1" class="diagram-node">
+    <rect x="420" y="230" width="230" height="110" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="535.0" y="285.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">aplicació</text>
+  </g>
+  <g id="data-1" class="diagram-node">
+    <rect x="750" y="230" width="260" height="110" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="880.0" y="285.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">consulta de dades</text>
+  </g>
+  <g id="result-1" class="diagram-node">
+    <rect x="1110" y="230" width="180" height="110" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="1200.0" y="285.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">HTML</text>
+  </g>
+  <g id="request-2" class="diagram-node">
+    <rect x="30" y="370" width="290" height="110" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="175.0" y="409.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">GET</text>
+    <text x="175.0" y="440.59999999999997" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">/api/llibres/42</text>
+  </g>
+  <g id="server-2" class="diagram-node">
+    <rect x="420" y="370" width="230" height="110" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="535.0" y="425.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">aplicació</text>
+  </g>
+  <g id="data-2" class="diagram-node">
+    <rect x="750" y="370" width="260" height="110" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="880.0" y="425.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">consulta de dades</text>
+  </g>
+  <g id="result-2" class="diagram-node">
+    <rect x="1110" y="370" width="180" height="110" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="1200.0" y="425.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">JSON</text>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="290" viewBox="0 0 1000 290" role="img" aria-labelledby="title description">
+  <title id="title">Model de dos nivells</title>
+  <desc id="description">Client instal·lat, amb presentació i lògica, connectat a un servidor de dades, amb persistència i consultes. Connexió sense fletxes.</desc>
+  <metadata id="ascii-source">Client instal·lat                         Servidor de dades
+[presentació + lògica] ---- connexió ---- [persistència i consultes]
+</metadata>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#354552"/></marker></defs>
+  <style>text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; } .connector { fill: none; stroke: #354552; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }</style>
+  <rect x="1" y="1" width="998" height="288" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <text x="500.0" y="31" text-anchor="middle" font-size="24" font-weight="700" fill="#354552">Model de dos nivells</text>
+  <path class="connector" d="M 390 170 H 610"/>
+  <text x="500" y="150" text-anchor="middle" font-size="22" fill="#354552">connexió</text>
+  <g id="client" class="diagram-node">
+    <rect x="30" y="100" width="360" height="140" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="210.0" y="154.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Client instal·lat</text>
+    <text x="210.0" y="185.60000000000002" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">[presentació + lògica]</text>
+  </g>
+  <g id="data-server" class="diagram-node">
+    <rect x="610" y="100" width="360" height="140" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="790.0" y="138.8" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Servidor de dades</text>
+    <text x="790.0" y="170.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">[persistència i</text>
+    <text x="790.0" y="201.20000000000002" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">consultes]</text>
+  </g>
+</svg>

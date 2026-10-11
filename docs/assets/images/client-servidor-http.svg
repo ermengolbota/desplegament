@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="270" viewBox="0 0 600 270" role="img" aria-labelledby="title description">
+  <title id="title">Comunicació entre un client HTTP i un servidor HTTP</title>
+  <desc id="description">El client envia una petició al servidor, que li retorna una resposta. La fletxa de petició va d'esquerra a dreta i la de resposta de dreta a esquerra.</desc>
+  <defs>
+    <marker id="request-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#17689b"/>
+    </marker>
+    <marker id="response-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#23734d"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="598" height="268" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" text-anchor="middle">
+    <rect x="16" y="20" width="240" height="64" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <rect x="344" y="20" width="240" height="64" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <g font-size="32" font-weight="700" dominant-baseline="middle">
+      <text x="136" y="52" fill="#164e73">Client HTTP</text>
+      <text x="464" y="52" fill="#205b3e">Servidor HTTP</text>
+    </g>
+    <g stroke="#a6b3bd" stroke-width="2" stroke-dasharray="6 6">
+      <line x1="136" y1="92" x2="136" y2="250"/>
+      <line x1="464" y1="92" x2="464" y2="250"/>
+    </g>
+    <text x="300" y="127" font-size="32" font-weight="600" fill="#164e73">Petició</text>
+    <line x1="136" y1="147" x2="462" y2="147" stroke="#17689b" stroke-width="3" marker-end="url(#request-arrow)"/>
+    <text x="300" y="207" font-size="32" font-weight="600" fill="#205b3e">Resposta</text>
+    <line x1="464" y1="227" x2="138" y2="227" stroke="#23734d" stroke-width="3" marker-end="url(#response-arrow)"/>
+  </g>
+</svg>

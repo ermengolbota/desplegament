@@ -40,3 +40,219 @@
 .command-card > summary + * {
   margin-top: 1rem;
 }
+
+/* Navegació per temes: només es despleguen els grups que s'obren. */
+.wy-menu-vertical .sidebar-links {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-group > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 48px;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  list-style: none;
+  cursor: pointer;
+}
+
+.sidebar-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.sidebar-group > summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: .5rem;
+  height: .5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.sidebar-group[open] > summary::after {
+  transform: rotate(45deg);
+}
+
+.sidebar-group > summary:hover {
+  background: #4e4a4a;
+}
+
+.wy-menu-vertical .sidebar-links a,
+.wy-menu-vertical .sidebar-links li.current > a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.wy-menu-vertical .sidebar-links .sidebar-links a,
+.wy-menu-vertical .sidebar-links .sidebar-links li.current > a {
+  padding-left: 32px;
+}
+
+.sidebar-group > summary:focus-visible,
+.wy-menu-vertical .sidebar-links a:focus-visible,
+.mobile-menu-toggle:focus-visible,
+.sidebar-close:focus-visible {
+  outline: 3px solid #78c4f0;
+  outline-offset: -3px;
+}
+
+.sidebar-close {
+  display: none;
+}
+
+/* Índex de l'article actiu, amb un control separat per als subapartats. */
+.sidebar-article-toggle {
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+.sidebar-article-toggle::after {
+  content: "";
+  flex-shrink: 0;
+  width: .5rem;
+  height: .5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.sidebar-article-toggle[aria-expanded="true"]::after {
+  transform: rotate(45deg);
+}
+
+.wy-menu-vertical .sidebar-toc[hidden] {
+  display: none;
+}
+
+.sidebar-toc {
+  margin: 0 12px 12px 20px;
+  border-left: 2px solid #c9d3db;
+  background: #f3f5f7;
+}
+
+.wy-menu-vertical .sidebar-toc-list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wy-menu-vertical .sidebar-toc-list[hidden],
+.sidebar-toc-toggle[hidden] {
+  display: none;
+}
+
+.sidebar-toc-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.wy-menu-vertical .sidebar-toc .sidebar-toc-row > a {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 8px 12px calc(10px + var(--toc-depth) * 10px);
+  color: #354552;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  background: transparent;
+}
+
+.wy-menu-vertical .sidebar-toc .sidebar-toc-row > a:hover,
+.sidebar-toc-toggle:hover {
+  background: #e0e7ed;
+}
+
+.wy-menu-vertical .sidebar-toc .sidebar-toc-row > a[aria-current="location"] {
+  color: #165a85;
+  font-weight: 700;
+  background: #dcecf7;
+}
+
+.sidebar-toc-toggle {
+  flex: 0 0 48px;
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #354552;
+  cursor: pointer;
+}
+
+.sidebar-toc-toggle > span {
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.sidebar-toc-toggle[aria-expanded="true"] > span {
+  transform: rotate(45deg);
+}
+
+.sidebar-toc-toggle:focus-visible {
+  outline: 3px solid #2980b9;
+  outline-offset: -3px;
+}
+
+@media screen and (max-width: 768px) {
+  .wy-nav-top {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .5rem .75rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .wy-nav-top > a {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .mobile-menu-toggle {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 4px;
+    background: transparent;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .sidebar-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: calc(100% - 2rem);
+    min-height: 48px;
+    margin: .5rem 1rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}

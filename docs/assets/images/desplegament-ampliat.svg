@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="730" viewBox="0 0 1260 730" role="img" aria-labelledby="title description">
+  <title id="title">Desplegament ampliat</title>
+  <desc id="description">Navegador — CDN / proxy invers — Aplicació, amb línies sense fletxes. L’aplicació apunta a Base de dades, Emmagatzematge d’objectes, Servei extern i Cua; la Cua apunta a Treballador.</desc>
+  <metadata id="ascii-source">Navegador
+    |
+CDN / proxy invers
+    |
+Aplicació
+    +----&gt; Base de dades
+    +----&gt; Emmagatzematge d’objectes
+    +----&gt; Servei extern
+    +----&gt; Cua ----&gt; Treballador
+</metadata>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#354552"/></marker></defs>
+  <style>text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; } .connector { fill: none; stroke: #354552; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }</style>
+  <rect x="1" y="1" width="1258" height="728" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <text x="630.0" y="31" text-anchor="middle" font-size="24" font-weight="700" fill="#354552">Desplegament ampliat</text>
+  <path class="connector" d="M 210 170 V 240"/>
+  <path class="connector" d="M 210 330 V 450"/>
+  <path class="connector" d="M 390 495 H 500 V 235 H 596" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 500 380 H 596" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 500 525 H 596" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 500 495 V 660 H 596" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 840 660 H 976" marker-end="url(#arrow)"/>
+  <g id="browser" class="diagram-node">
+    <rect x="30" y="80" width="360" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="210.0" y="125.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Navegador</text>
+  </g>
+  <g id="proxy" class="diagram-node">
+    <rect x="30" y="240" width="360" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="210.0" y="285.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">CDN / proxy invers</text>
+  </g>
+  <g id="application" class="diagram-node">
+    <rect x="30" y="450" width="360" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="210.0" y="495.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Aplicació</text>
+  </g>
+  <g id="database" class="diagram-node">
+    <rect x="600" y="190" width="300" height="90" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="750.0" y="235.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Base de dades</text>
+  </g>
+  <g id="objects" class="diagram-node">
+    <rect x="600" y="330" width="300" height="100" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="750.0" y="364.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Emmagatzematge</text>
+    <text x="750.0" y="395.59999999999997" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">d’objectes</text>
+  </g>
+  <g id="external" class="diagram-node">
+    <rect x="600" y="480" width="300" height="90" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="750.0" y="525.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Servei extern</text>
+  </g>
+  <g id="queue" class="diagram-node">
+    <rect x="600" y="620" width="240" height="80" rx="10" fill="#f3f5f7" stroke="#647788" stroke-width="2"/>
+    <text x="720.0" y="660.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#354552">Cua</text>
+  </g>
+  <g id="worker" class="diagram-node">
+    <rect x="980" y="620" width="250" height="80" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="1105.0" y="660.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Treballador</text>
+  </g>
+</svg>

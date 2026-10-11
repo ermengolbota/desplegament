@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="950" viewBox="0 0 1380 950" role="img" aria-labelledby="title description">
+  <title id="title">Decisió de memòria cau</title>
+  <desc id="description">Arriba una petició. Sense resposta aplicable: demanar-la al següent servidor. Amb resposta aplicable: si és fresca i reutilitzable, respondre des de memòria cau; si cal validar, petició condicional, amb les opcions 304: reutilitzar el cos i 200: obtenir contingut nou.</desc>
+  <metadata id="ascii-source">Arriba una petició
+    |
+    +-- No hi ha resposta aplicable ------&gt; Demanar-la al següent servidor
+    |
+    +-- Hi ha resposta aplicable
+            |
+            +-- Fresca i reutilitzable ---&gt; Respondre des de memòria cau
+            |
+            +-- Cal validar -------------&gt; Petició condicional
+                                                |
+                                                +-- 304: reutilitzar el cos
+                                                |
+                                                +-- 200: obtenir contingut nou
+</metadata>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#354552"/></marker></defs>
+  <style>text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; } .connector { fill: none; stroke: #354552; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }</style>
+  <rect x="1" y="1" width="1378" height="948" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <text x="690.0" y="31" text-anchor="middle" font-size="24" font-weight="700" fill="#354552">Decisió de memòria cau</text>
+  <path class="connector" d="M 460 170 V 210 H 200 V 250"/>
+  <path class="connector" d="M 460 210 H 660 V 250"/>
+  <path class="connector" d="M 200 350 V 446" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 660 350 V 390 H 440 V 695"/>
+  <path class="connector" d="M 440 500 H 490"/>
+  <path class="connector" d="M 830 500 H 966" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 440 695 H 490"/>
+  <path class="connector" d="M 830 695 H 966" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 1160 740 V 790 H 995 V 820"/>
+  <path class="connector" d="M 1160 790 H 1245 V 820"/>
+  <g id="request" class="diagram-node">
+    <rect x="290" y="80" width="340" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="460.0" y="125.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Arriba una petició</text>
+  </g>
+  <g id="miss" class="diagram-node">
+    <rect x="30" y="250" width="340" height="100" rx="10" fill="#f3f5f7" stroke="#647788" stroke-width="2"/>
+    <text x="200.0" y="284.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#354552">No hi ha resposta</text>
+    <text x="200.0" y="315.59999999999997" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#354552">aplicable</text>
+  </g>
+  <g id="next" class="diagram-node">
+    <rect x="30" y="450" width="340" height="100" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="200.0" y="484.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Demanar-la al següent</text>
+    <text x="200.0" y="515.6" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">servidor</text>
+  </g>
+  <g id="hit" class="diagram-node">
+    <rect x="490" y="250" width="340" height="100" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="660.0" y="284.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Hi ha resposta</text>
+    <text x="660.0" y="315.59999999999997" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">aplicable</text>
+  </g>
+  <g id="fresh" class="diagram-node">
+    <rect x="490" y="450" width="340" height="100" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="660.0" y="500.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Fresca i reutilitzable</text>
+  </g>
+  <g id="cached" class="diagram-node">
+    <rect x="970" y="450" width="380" height="100" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="1160.0" y="484.4" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Respondre des de memòria</text>
+    <text x="1160.0" y="515.6" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">cau</text>
+  </g>
+  <g id="validate" class="diagram-node">
+    <rect x="490" y="650" width="340" height="90" rx="10" fill="#f3f5f7" stroke="#647788" stroke-width="2"/>
+    <text x="660.0" y="695.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#354552">Cal validar</text>
+  </g>
+  <g id="conditional" class="diagram-node">
+    <rect x="970" y="650" width="380" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="1160.0" y="695.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Petició condicional</text>
+  </g>
+  <g id="not-modified" class="diagram-node">
+    <rect x="880" y="820" width="230" height="100" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="995.0" y="855.7" text-anchor="middle" dominant-baseline="middle" font-size="22" font-weight="600" fill="#205b3e">304: reutilitzar</text>
+    <text x="995.0" y="884.3000000000001" text-anchor="middle" dominant-baseline="middle" font-size="22" font-weight="600" fill="#205b3e">el cos</text>
+  </g>
+  <g id="modified" class="diagram-node">
+    <rect x="1140" y="820" width="210" height="100" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="1245.0" y="855.7" text-anchor="middle" dominant-baseline="middle" font-size="22" font-weight="600" fill="#205b3e">200: obtenir</text>
+    <text x="1245.0" y="884.3000000000001" text-anchor="middle" dominant-baseline="middle" font-size="22" font-weight="600" fill="#205b3e">contingut nou</text>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title description">
+  <title id="title">Balanceig i dades compartides</title>
+  <desc id="description">Proxy / balanç es bifurca cap a Aplicació A i Aplicació B. Les dues aplicacions convergeixen en una fletxa cap a Dades compartides.</desc>
+  <metadata id="ascii-source">                  +--&gt; Aplicació A --+
+Proxy / balanç ---+                  +--&gt; Dades compartides
+                  +--&gt; Aplicació B --+
+</metadata>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#354552"/></marker></defs>
+  <style>text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; } .connector { fill: none; stroke: #354552; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }</style>
+  <rect x="1" y="1" width="1198" height="448" rx="14" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <text x="600.0" y="31" text-anchor="middle" font-size="24" font-weight="700" fill="#354552">Balanceig i dades compartides</text>
+  <path class="connector" d="M 310 255 H 370 V 135 H 436" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 370 255 V 375 H 436" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 710 135 H 790 V 375 H 710"/>
+  <path class="connector" d="M 790 255 H 876" marker-end="url(#arrow)"/>
+  <g id="proxy" class="diagram-node">
+    <rect x="30" y="210" width="280" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="170.0" y="255.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Proxy / balanç</text>
+  </g>
+  <g id="app-a" class="diagram-node">
+    <rect x="440" y="90" width="270" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="575.0" y="135.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Aplicació A</text>
+  </g>
+  <g id="app-b" class="diagram-node">
+    <rect x="440" y="330" width="270" height="90" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="575.0" y="375.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#164e73">Aplicació B</text>
+  </g>
+  <g id="shared" class="diagram-node">
+    <rect x="880" y="210" width="290" height="90" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="1025.0" y="255.0" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="600" fill="#205b3e">Dades compartides</text>
+  </g>
+</svg>
