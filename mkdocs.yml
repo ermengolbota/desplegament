@@ -1,0 +1,22 @@
+site_name: Documentació de desplegament
+site_description: Guies i procediments de desplegament del projecte.
+site_url: https://ermengolbota.github.io/desplegament/
+repo_url: https://github.com/ermengolbota/desplegament
+repo_name: ermengolbota/desplegament
+edit_uri: edit/main/docs/
+
+theme:
+  name: mkdocs
+
+nav:
+  - Inici: index.md
+  - Guia de contribució: contribucio.md
+  - Publicació: publicacio.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
