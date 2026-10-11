@@ -6,17 +6,25 @@ repo_name: ermengolbota/desplegament
 edit_uri: edit/main/docs/
 
 theme:
-  name: mkdocs
+  name: readthedocs
 
 nav:
   - Inici: index.md
-  - Guia de contribució: contribucio.md
-  - Publicació: publicacio.md
+  - Permisos, usuaris i grups: permisos-usuaris-grups.md
+  - Processos i recursos del sistema: processos-recursos-sistema.md
+  - Gestió de paquets: gestio-paquets.md
+  - Xarxa: xarxa.md
+  - Sistemes de fitxers: sistemes-fitxers.md
+  - Transferència de fitxers: transferencia-fitxers.md
 
 plugins:
   - search
 
+extra_css:
+  - assets/stylesheets/extra.css
+
 markdown_extensions:
   - admonition
+  - md_in_html
   - toc:
       permalink: true
