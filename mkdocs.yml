@@ -20,6 +20,7 @@ nav:
       - Bases de la WWW: la-web/bases-www.md
       - Arquitectura Client Servidor: la-web/arquitectura-client-servidor.md
       - Arquitectura d'una aplicació web: la-web/arquitectura-aplicacio-web.md
+      - RESUM: la-web/resum.md
 
 
 plugins:

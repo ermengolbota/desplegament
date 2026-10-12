@@ -410,6 +410,10 @@ https://example.org/materials/tema1.html?idioma=ca#glossari
 
 Podem representar un intercanvi HTTP/1.1 simplificat així:
 
+[![Gràfic d’una petició GET i la resposta HTTP/1.1 200 OK: línia inicial, capçaleres, línia en blanc i cos HTML. La petició va del client al servidor i la resposta torna al client.](../assets/images/http-peticio-resposta.svg)](../assets/images/http-peticio-resposta.svg)
+
+*Clica el gràfic per obrir-lo a mida completa i ampliar-lo. La franja groga assenyala la línia en blanc; el text de la franja és una anotació, no forma part del missatge.*
+
 ```http
 GET /materials/tema1.html?idioma=ca HTTP/1.1
 Host: example.org

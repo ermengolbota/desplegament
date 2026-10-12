@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1060" viewBox="0 0 1000 1060" role="img" aria-labelledby="title description">
+  <title id="title">Anatomia d’una petició i una resposta HTTP/1.1</title>
+  <desc id="description">El client envia GET /materials/tema1.html?idioma=ca HTTP/1.1 amb les capçaleres Host: example.org i Accept: text/html. La petició acaba amb una línia en blanc i no té cos. El servidor retorna HTTP/1.1 200 OK, Content-Type: text/html; charset=utf-8 i Content-Length: 89. Una línia en blanc separa les capçaleres del cos HTML de 89 bytes. La línia inicial i les capçaleres són textuals en HTTP/1.1; el cos pot ser text o dades binàries. HTTP/2 i HTTP/3 utilitzen un format binari.</desc>
+  <defs>
+    <marker id="request-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#17689b"/>
+    </marker>
+    <marker id="response-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#23734d"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #263b4a; }
+    .code { font-family: Consolas, 'Courier New', monospace; font-size: 19px; }
+    .label { font-size: 20px; font-weight: 600; }
+    .note { font-size: 19px; fill: #435967; }
+  </style>
+  <rect x="1" y="1" width="998" height="1058" rx="18" fill="#fafbfc" stroke="#d6dce2" stroke-width="2"/>
+  <text x="40" y="59" font-size="34" font-weight="700" style="fill:#163a52">HTTP/1.1: petició i resposta</text>
+  <text x="40" y="99" font-size="22">Missatges amb una estructura i unes normes de sintaxi.</text>
+
+  <g text-anchor="middle" font-size="26" font-weight="700">
+    <rect x="40" y="130" width="220" height="60" rx="10" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="150" y="169" style="fill:#164e73">Client</text>
+    <rect x="740" y="130" width="220" height="60" rx="10" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="850" y="169" style="fill:#205b3e">Servidor</text>
+    <text x="500" y="141" font-size="20" style="fill:#164e73">1. Petició</text>
+    <text x="500" y="216" font-size="20" style="fill:#205b3e">2. Resposta</text>
+  </g>
+  <path d="M 280 153 H 718" fill="none" stroke="#17689b" stroke-width="3" marker-end="url(#request-arrow)"/>
+  <path d="M 720 183 H 282" fill="none" stroke="#23734d" stroke-width="3" marker-end="url(#response-arrow)"/>
+
+  <g class="message">
+    <rect x="40" y="250" width="920" height="280" rx="12" fill="#e7f2fa" stroke="#17689b" stroke-width="2"/>
+    <text x="60" y="288" font-size="24" font-weight="700" style="fill:#164e73">1. Petició: demanar un recurs</text>
+    <text class="label" x="60" y="341">Línia inicial</text>
+    <text class="code" x="260" y="341">GET /materials/tema1.html?idioma=ca HTTP/1.1</text>
+    <text class="label" x="60" y="381">Capçaleres</text>
+    <text class="code" x="260" y="381">Host: example.org</text>
+    <text class="code" x="260" y="411">Accept: text/html</text>
+    <rect x="55" y="428" width="890" height="36" rx="5" fill="#ffe8b3"/>
+    <text class="label" x="70" y="453" style="fill:#704500">LÍNIA EN BLANC</text>
+    <text x="300" y="453" font-size="19" style="fill:#704500">Final de les capçaleres</text>
+    <text class="note" x="60" y="504">Aquesta petició no té cos. GET indica el mètode; /materials/… indica el recurs.</text>
+  </g>
+
+  <g class="message">
+    <rect x="40" y="560" width="920" height="360" rx="12" fill="#e9f5ee" stroke="#23734d" stroke-width="2"/>
+    <text x="60" y="598" font-size="24" font-weight="700" style="fill:#205b3e">2. Resposta: retornar l’estat i el contingut</text>
+    <text class="label" x="60" y="641">Línia d’estat</text>
+    <text class="code" x="260" y="641">HTTP/1.1 200 OK</text>
+    <text class="label" x="60" y="681">Capçaleres</text>
+    <text class="code" x="260" y="681">Content-Type: text/html; charset=utf-8</text>
+    <text class="code" x="260" y="711">Content-Length: 89</text>
+    <rect x="55" y="728" width="890" height="36" rx="5" fill="#ffe8b3"/>
+    <text class="label" x="70" y="753" style="fill:#704500">LÍNIA EN BLANC</text>
+    <text x="300" y="753" font-size="19" style="fill:#704500">Separa les capçaleres del contingut</text>
+    <text class="label" x="60" y="798">Cos HTML</text>
+    <text class="code" x="260" y="798">&lt;!doctype html&gt;&lt;html lang="ca"&gt;</text>
+    <text class="code" x="260" y="826">&lt;meta charset="utf-8"&gt;&lt;title&gt;Web&lt;/title&gt;</text>
+    <text class="code" x="260" y="854">&lt;p&gt;Hola&lt;/p&gt;&lt;/html&gt;</text>
+    <text class="note" x="60" y="897">200 indica èxit. Content-Type descriu el contingut; Content-Length en compta els bytes.</text>
+  </g>
+  <text x="40" y="960" font-size="21" font-weight="700" style="fill:#704500">Una línia en blanc, no un espai, marca el final de les capçaleres.</text>
+  <text class="note" x="40" y="993">Cos HTML replegat per llegibilitat: 89 bytes, sense aquests salts ni un salt final.</text>
+  <text class="note" x="40" y="1026">El cos pot ser text o dades binàries. HTTP/2 i HTTP/3 utilitzen un format binari.</text>
+</svg>
