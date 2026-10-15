@@ -23,6 +23,7 @@ nav:
       - RESUM: la-web/resum.md
   - APACHE:
       - Configuració bàsica: apache/configuracio-basica.md
+      - Configuració avançada: apache/configuracio-avancada.md
 
 
 plugins:

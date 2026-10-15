@@ -18,6 +18,8 @@ Aquest apartat recull la teoria bàsica treballada a classe: directoris dels llo
 
 Una **directiva** és una instrucció que indica a Apache com ha de servir un lloc o tractar un directori.
 
+### Definició del lloc web
+
 <details class="command-card" markdown="1">
 <summary><code>&lt;VirtualHost IP:port&gt;</code><span class="command-description">Agrupar les directives d’un lloc web</span></summary>
 
@@ -58,6 +60,8 @@ La directiva no crea el nom al DNS: el client ha de poder resoldre’l a la IP d
 
 </details>
 
+### Regles de directori i accés
+
 <details class="command-card" markdown="1">
 <summary><code>&lt;Directory "/ruta"&gt;</code><span class="command-description">Agrupar les regles d’un directori del servidor</span></summary>
 
@@ -84,6 +88,8 @@ La ruta és un directori real del servidor, no una URL. El bloc té una etiqueta
 S’utilitza dins del bloc corresponent, com `Directory`. Una denegació pot donar **`403 Forbidden`**. Aquesta autorització no canvia els permisos dels fitxers de Linux.
 
 </details>
+
+### Pàgina d’inici i llistat de fitxers
 
 <details class="command-card" markdown="1">
 <summary><code>Options</code>, <code>Indexes</code><span class="command-description">Permetre o impedir el llistat de fitxers d’un directori</span></summary>
@@ -117,6 +123,8 @@ Quan es demana una URL de directori, com `/` o `/materials/`, Apache busca aques
 
 </details>
 
+### Camins de la URL
+
 <details class="command-card" markdown="1">
 <summary><code>Alias</code><span class="command-description">Associar un camí de la URL amb un altre directori</span></summary>
 
@@ -148,6 +156,8 @@ Aquest exemple denega l’accés a `/privat` i als seus camins inferiors, com `/
 [Documentació de Location](https://httpd.apache.org/docs/2.4/mod/core.html#location).
 
 </details>
+
+### Pàgines d’error
 
 <details class="command-card" markdown="1">
 <summary><code>ErrorDocument</code><span class="command-description">Indicar quina pàgina mostrar quan hi ha un error</span></summary>

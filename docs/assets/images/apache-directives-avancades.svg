@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2341" viewBox="0 0 1800 2341" role="img" aria-labelledby="title description">
+  <title id="title">Configuració avançada d’Apache amb directives explicades</title>
+  <desc id="description">Un fitxer de lloc combina Redirect, AllowOverride, Require per IP i per usuari, AuthType, AuthName, AuthUserFile, ProxyPass, ProxyPassReverse, SSLEngine, SSLCertificateFile i SSLCertificateKeyFile. Cada directiva avançada té un color propi i una explicació al costat; les directives bàsiques de context es mostren en gris. HTTP redirigeix cap a HTTPS. El directori intern restringeix per IP, el privat demana autenticació i /app/ passa a un servidor local al port 8080. Un segon requadre mostra un fitxer .htaccess amb una redirecció temporal autoritzada per AllowOverride FileInfo.</desc>
+  <metadata id="site-config">&lt;VirtualHost *:80&gt;
+    ServerName web.exemple.test
+    Redirect 301 / https://web.exemple.test/
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:443&gt;
+    DocumentRoot /var/www/web
+    ServerName web.exemple.test
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/web-fullchain.pem
+    SSLCertificateKeyFile /etc/ssl/private/web.key
+
+    &lt;Directory &quot;/var/www/web&quot;&gt;
+        Require all granted
+        AllowOverride FileInfo
+    &lt;/Directory&gt;
+
+    &lt;Directory &quot;/var/www/web/intern&quot;&gt;
+        Require ip 192.168.56.0/24
+    &lt;/Directory&gt;
+
+    &lt;Directory &quot;/var/www/web/privat&quot;&gt;
+        AuthType Basic
+        AuthName &quot;Zona privada&quot;
+        AuthUserFile /etc/apache2/usuaris.htpasswd
+        Require valid-user
+    &lt;/Directory&gt;
+
+    ProxyPass /app/ http://127.0.0.1:8080/
+    ProxyPassReverse /app/ http://127.0.0.1:8080/
+&lt;/VirtualHost&gt;</metadata>
+  <metadata id="htaccess-config">Redirect 302 /avis/ https://web.exemple.test/noticies/</metadata>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #263b4a; }
+    .code { font-family: Consolas, 'Courier New', monospace; font-size: 23px; }
+    .line-number { font-family: Consolas, monospace; font-size: 17px; fill: #6b7784; text-anchor: end; }
+    .note-title { font-size: 22px; font-weight: 700; }
+    .note-body { font-size: 20px; }
+    .redirect { fill: #ad2f36; }
+    .allowoverride { fill: #8a5900; }
+    .require { fill: #006b66; }
+    .authtype { fill: #6d28a4; }
+    .authname { fill: #9a306d; }
+    .authuserfile { fill: #4650a8; }
+    .proxypass { fill: #17689b; }
+    .proxypassreverse { fill: #426716; }
+    .sslengine { fill: #8a3c18; }
+    .sslcertificatefile { fill: #276427; }
+    .sslcertificatekeyfile { fill: #153d68; }
+    .context { fill: #52616b; }
+  </style>
+  <rect x="1" y="1" width="1798" height="2339" rx="18" fill="#fafbfc" stroke="#d6dce2" stroke-width="2"/>
+  <text x="32" y="54" font-size="34" font-weight="700" style="fill:#163a52">Configuració avançada, directiva a directiva</text>
+  <text x="55" y="108" font-size="24" font-weight="600">/etc/apache2/sites-available/web.conf</text>
+  <text x="1120" y="108" font-size="24" font-weight="600">Utilitat</text>
+  <rect x="32" y="125" width="1040" height="1890" rx="12" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <path d="M 87 145 V 1995" stroke="#e3e7ec" stroke-width="2"/>
+  <g id="site-example">
+  <text class="line-number" x="73" y="180">1</text>
+  <text class="code context" xml:space="preserve" x="106" y="180">&lt;VirtualHost *:80&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 173 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="173" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="172">VirtualHost</text>
+    <text class="note-body" x="1120" y="202">Lloc HTTP al port 80.</text>
+  </g>
+  <text class="line-number" x="73" y="240">2</text>
+  <text class="code context" xml:space="preserve" x="106" y="240">    ServerName web.exemple.test</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 233 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="233" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="232">ServerName</text>
+    <text class="note-body" x="1120" y="262">Nom públic del lloc.</text>
+  </g>
+  <text class="line-number" x="73" y="300">3</text>
+  <text class="code redirect" xml:space="preserve" x="106" y="300">    Redirect 301 / https://web.exemple.test/</text>
+  <g class="annotation" data-directive="redirect">
+    <path d="M 1045 293 H 1103" fill="none" stroke="#ad2f36" stroke-width="2"/>
+    <circle cx="1103" cy="293" r="4" fill="#ad2f36"/>
+    <text class="note-title redirect" x="1120" y="292">Redirect</text>
+    <text class="note-body" x="1120" y="322">Redirigeix tot el lloc HTTP cap a HTTPS.</text>
+  </g>
+  <text class="line-number" x="73" y="360">4</text>
+  <text class="code context" xml:space="preserve" x="106" y="360">&lt;/VirtualHost&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 353 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="353" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="352">VirtualHost</text>
+    <text class="note-body" x="1120" y="382">Tanca el bloc HTTP.</text>
+  </g>
+  <text class="line-number" x="73" y="420">5</text>
+  <text class="line-number" x="73" y="480">6</text>
+  <text class="code context" xml:space="preserve" x="106" y="480">&lt;VirtualHost *:443&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 473 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="473" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="472">VirtualHost</text>
+    <text class="note-body" x="1120" y="502">Lloc HTTPS al port 443.</text>
+  </g>
+  <text class="line-number" x="73" y="540">7</text>
+  <text class="code context" xml:space="preserve" x="106" y="540">    DocumentRoot /var/www/web</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 533 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="533" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="532">DocumentRoot</text>
+    <text class="note-body" x="1120" y="562">Directori base del contingut.</text>
+  </g>
+  <text class="line-number" x="73" y="600">8</text>
+  <text class="code context" xml:space="preserve" x="106" y="600">    ServerName web.exemple.test</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 593 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="593" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="592">ServerName</text>
+    <text class="note-body" x="1120" y="622">Nom que ha de cobrir el certificat.</text>
+  </g>
+  <text class="line-number" x="73" y="660">9</text>
+  <text class="code sslengine" xml:space="preserve" x="106" y="660">    SSLEngine on</text>
+  <g class="annotation" data-directive="sslengine">
+    <path d="M 1045 653 H 1103" fill="none" stroke="#8a3c18" stroke-width="2"/>
+    <circle cx="1103" cy="653" r="4" fill="#8a3c18"/>
+    <text class="note-title sslengine" x="1120" y="652">SSLEngine</text>
+    <text class="note-body" x="1120" y="682">Activa TLS per a aquest lloc.</text>
+  </g>
+  <text class="line-number" x="73" y="720">10</text>
+  <text class="code sslcertificatefile" xml:space="preserve" x="106" y="720">    SSLCertificateFile /etc/ssl/certs/web-fullchain.pem</text>
+  <g class="annotation" data-directive="sslcertificatefile">
+    <path d="M 1045 713 H 1103" fill="none" stroke="#276427" stroke-width="2"/>
+    <circle cx="1103" cy="713" r="4" fill="#276427"/>
+    <text class="note-title sslcertificatefile" x="1120" y="712">SSLCertificateFile</text>
+    <text class="note-body" x="1120" y="742">Certificat PEM i cadena intermèdia.</text>
+  </g>
+  <text class="line-number" x="73" y="780">11</text>
+  <text class="code sslcertificatekeyfile" xml:space="preserve" x="106" y="780">    SSLCertificateKeyFile /etc/ssl/private/web.key</text>
+  <g class="annotation" data-directive="sslcertificatekeyfile">
+    <path d="M 1045 773 H 1103" fill="none" stroke="#153d68" stroke-width="2"/>
+    <circle cx="1103" cy="773" r="4" fill="#153d68"/>
+    <text class="note-title sslcertificatekeyfile" x="1120" y="772">SSLCertificateKeyFile</text>
+    <text class="note-body" x="1120" y="802">Clau privada corresponent al certificat.</text>
+  </g>
+  <text class="line-number" x="73" y="840">12</text>
+  <text class="line-number" x="73" y="900">13</text>
+  <text class="code context" xml:space="preserve" x="106" y="900">    &lt;Directory &quot;/var/www/web&quot;&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 893 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="893" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="892">Directory</text>
+    <text class="note-body" x="1120" y="922">Regles del directori principal.</text>
+  </g>
+  <text class="line-number" x="73" y="960">14</text>
+  <text class="code require" xml:space="preserve" x="106" y="960">        Require all granted</text>
+  <g class="annotation" data-directive="require">
+    <path d="M 1045 953 H 1103" fill="none" stroke="#006b66" stroke-width="2"/>
+    <circle cx="1103" cy="953" r="4" fill="#006b66"/>
+    <text class="note-title require" x="1120" y="952">Require all granted</text>
+    <text class="note-body" x="1120" y="982">Permet l’accés públic al contingut.</text>
+  </g>
+  <text class="line-number" x="73" y="1020">15</text>
+  <text class="code allowoverride" xml:space="preserve" x="106" y="1020">        AllowOverride FileInfo</text>
+  <g class="annotation" data-directive="allowoverride">
+    <path d="M 1045 1013 H 1103" fill="none" stroke="#8a5900" stroke-width="2"/>
+    <circle cx="1103" cy="1013" r="4" fill="#8a5900"/>
+    <text class="note-title allowoverride" x="1120" y="1012">AllowOverride</text>
+    <text class="note-body" x="1120" y="1042">Permet directives com Redirect a .htaccess.</text>
+  </g>
+  <text class="line-number" x="73" y="1080">16</text>
+  <text class="code context" xml:space="preserve" x="106" y="1080">    &lt;/Directory&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 1073 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="1073" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="1072">Directory</text>
+    <text class="note-body" x="1120" y="1102">Tanca les regles del directori principal.</text>
+  </g>
+  <text class="line-number" x="73" y="1140">17</text>
+  <text class="line-number" x="73" y="1200">18</text>
+  <text class="code context" xml:space="preserve" x="106" y="1200">    &lt;Directory &quot;/var/www/web/intern&quot;&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 1193 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="1193" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="1192">Directory</text>
+    <text class="note-body" x="1120" y="1222">Zona amb accés segons la IP.</text>
+  </g>
+  <text class="line-number" x="73" y="1260">19</text>
+  <text class="code require" xml:space="preserve" x="106" y="1260">        Require ip 192.168.56.0/24</text>
+  <g class="annotation" data-directive="require">
+    <path d="M 1045 1253 H 1103" fill="none" stroke="#006b66" stroke-width="2"/>
+    <circle cx="1103" cy="1253" r="4" fill="#006b66"/>
+    <text class="note-title require" x="1120" y="1252">Require ip</text>
+    <text class="note-body" x="1120" y="1282">Només permet clients d’aquesta subxarxa.</text>
+  </g>
+  <text class="line-number" x="73" y="1320">20</text>
+  <text class="code context" xml:space="preserve" x="106" y="1320">    &lt;/Directory&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 1313 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="1313" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="1312">Directory</text>
+    <text class="note-body" x="1120" y="1342">Tanca les regles de la zona interna.</text>
+  </g>
+  <text class="line-number" x="73" y="1380">21</text>
+  <text class="line-number" x="73" y="1440">22</text>
+  <text class="code context" xml:space="preserve" x="106" y="1440">    &lt;Directory &quot;/var/www/web/privat&quot;&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 1433 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="1433" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="1432">Directory</text>
+    <text class="note-body" x="1120" y="1462">Zona amb autenticació d’usuari.</text>
+  </g>
+  <text class="line-number" x="73" y="1500">23</text>
+  <text class="code authtype" xml:space="preserve" x="106" y="1500">        AuthType Basic</text>
+  <g class="annotation" data-directive="authtype">
+    <path d="M 1045 1493 H 1103" fill="none" stroke="#6d28a4" stroke-width="2"/>
+    <circle cx="1103" cy="1493" r="4" fill="#6d28a4"/>
+    <text class="note-title authtype" x="1120" y="1492">AuthType</text>
+    <text class="note-body" x="1120" y="1522">Selecciona autenticació Basic, sobre HTTPS.</text>
+  </g>
+  <text class="line-number" x="73" y="1560">24</text>
+  <text class="code authname" xml:space="preserve" x="106" y="1560">        AuthName &quot;Zona privada&quot;</text>
+  <g class="annotation" data-directive="authname">
+    <path d="M 1045 1553 H 1103" fill="none" stroke="#9a306d" stroke-width="2"/>
+    <circle cx="1103" cy="1553" r="4" fill="#9a306d"/>
+    <text class="note-title authname" x="1120" y="1552">AuthName</text>
+    <text class="note-body" x="1120" y="1582">Nom de la zona d’autenticació o realm.</text>
+  </g>
+  <text class="line-number" x="73" y="1620">25</text>
+  <text class="code authuserfile" xml:space="preserve" x="106" y="1620">        AuthUserFile /etc/apache2/usuaris.htpasswd</text>
+  <g class="annotation" data-directive="authuserfile">
+    <path d="M 1045 1613 H 1103" fill="none" stroke="#4650a8" stroke-width="2"/>
+    <circle cx="1103" cy="1613" r="4" fill="#4650a8"/>
+    <text class="note-title authuserfile" x="1120" y="1612">AuthUserFile</text>
+    <text class="note-body" x="1120" y="1642">Fitxer d’usuaris i resums de contrasenyes.</text>
+  </g>
+  <text class="line-number" x="73" y="1680">26</text>
+  <text class="code require" xml:space="preserve" x="106" y="1680">        Require valid-user</text>
+  <g class="annotation" data-directive="require">
+    <path d="M 1045 1673 H 1103" fill="none" stroke="#006b66" stroke-width="2"/>
+    <circle cx="1103" cy="1673" r="4" fill="#006b66"/>
+    <text class="note-title require" x="1120" y="1672">Require valid-user</text>
+    <text class="note-body" x="1120" y="1702">Permet usuaris autenticats amb aquest fitxer.</text>
+  </g>
+  <text class="line-number" x="73" y="1740">27</text>
+  <text class="code context" xml:space="preserve" x="106" y="1740">    &lt;/Directory&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 1733 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="1733" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="1732">Directory</text>
+    <text class="note-body" x="1120" y="1762">Tanca les regles de la zona privada.</text>
+  </g>
+  <text class="line-number" x="73" y="1800">28</text>
+  <text class="line-number" x="73" y="1860">29</text>
+  <text class="code proxypass" xml:space="preserve" x="106" y="1860">    ProxyPass /app/ http://127.0.0.1:8080/</text>
+  <g class="annotation" data-directive="proxypass">
+    <path d="M 1045 1853 H 1103" fill="none" stroke="#17689b" stroke-width="2"/>
+    <circle cx="1103" cy="1853" r="4" fill="#17689b"/>
+    <text class="note-title proxypass" x="1120" y="1852">ProxyPass</text>
+    <text class="note-body" x="1120" y="1882">Envia /app/ a l’aplicació interna del port 8080.</text>
+  </g>
+  <text class="line-number" x="73" y="1920">30</text>
+  <text class="code proxypassreverse" xml:space="preserve" x="106" y="1920">    ProxyPassReverse /app/ http://127.0.0.1:8080/</text>
+  <g class="annotation" data-directive="proxypassreverse">
+    <path d="M 1045 1913 H 1103" fill="none" stroke="#426716" stroke-width="2"/>
+    <circle cx="1103" cy="1913" r="4" fill="#426716"/>
+    <text class="note-title proxypassreverse" x="1120" y="1912">ProxyPassReverse</text>
+    <text class="note-body" x="1120" y="1942">Adapta capçaleres de redirecció de l’aplicació.</text>
+  </g>
+  <text class="line-number" x="73" y="1980">31</text>
+  <text class="code context" xml:space="preserve" x="106" y="1980">&lt;/VirtualHost&gt;</text>
+  <g class="annotation" data-directive="context">
+    <path d="M 1045 1973 H 1103" fill="none" stroke="#52616b" stroke-width="2"/>
+    <circle cx="1103" cy="1973" r="4" fill="#52616b"/>
+    <text class="note-title context" x="1120" y="1972">VirtualHost</text>
+    <text class="note-body" x="1120" y="2002">Tanca el bloc HTTPS.</text>
+  </g>
+  </g>
+  <text x="55" y="2085" font-size="24" font-weight="600">/var/www/web/.htaccess</text>
+  <text x="1120" y="2085" font-size="22" font-weight="600">Fitxer separat, dins del directori de la web</text>
+  <rect x="32" y="2110" width="1040" height="90" rx="12" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <g id="htaccess-example">
+  <text class="line-number" x="73" y="2155">1</text>
+  <text class="code redirect" xml:space="preserve" x="106" y="2155">Redirect 302 /avis/ https://web.exemple.test/noticies/</text>
+  <g class="annotation" data-directive="redirect">
+    <path d="M 1045 2148 H 1103" fill="none" stroke="#ad2f36" stroke-width="2"/>
+    <circle cx="1103" cy="2148" r="4" fill="#ad2f36"/>
+    <text class="note-title redirect" x="1120" y="2147">Redirect en .htaccess</text>
+    <text class="note-body" x="1120" y="2177">Redirecció temporal permesa per FileInfo.</text>
+  </g>
+  </g>
+  <text x="32" y="2235" font-size="22" font-weight="600">Color propi per a cada directiva avançada; gris per a les directives bàsiques de context.</text>
+  <text x="32" y="2269" font-size="21">El certificat i la clau han de correspondre; usuaris.htpasswd ha d’existir i ser llegible per Apache.</text>
+  <text x="32" y="2303" font-size="21" style="fill:#435967">Apache ha d’escoltar als ports 80 i 443; l’aplicació interna, al 8080. Els fitxers i directoris indicats han d’existir.</text>
+</svg>
