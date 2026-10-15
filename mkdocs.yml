@@ -24,6 +24,9 @@ nav:
   - APACHE:
       - Configuració bàsica: apache/configuracio-basica.md
       - Configuració avançada: apache/configuracio-avancada.md
+  - NGINX:
+      - Configuració bàsica: nginx/configuracio-basica.md
+      - Configuració avançada: nginx/configuracio-avancada.md
 
 
 plugins:
