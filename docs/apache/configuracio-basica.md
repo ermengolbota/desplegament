@@ -19,6 +19,46 @@ Aquest apartat recull la teoria bàsica treballada a classe: directoris dels llo
 Una **directiva** és una instrucció que indica a Apache com ha de servir un lloc o tractar un directori.
 
 <details class="command-card" markdown="1">
+<summary><code>&lt;VirtualHost IP:port&gt;</code><span class="command-description">Agrupar les directives d’un lloc web</span></summary>
+
+Defineix un lloc per a una adreça IP i un port.
+
+```apache
+<VirtualHost *:80>
+    DocumentRoot /var/www/web
+    ServerName web.exemple.test
+</VirtualHost>
+```
+
+`*:80` indica les adreces locals aplicables al port `80`. També es pot indicar una IP concreta: `<VirtualHost 192.168.56.10:80>`. Apache ha d’estar escoltant en aquell port; el bloc no l’obre per si mateix.
+
+</details>
+
+<details class="command-card" markdown="1">
+<summary><code>DocumentRoot</code><span class="command-description">Indicar on són els fitxers del lloc web</span></summary>
+
+```apache
+DocumentRoot /var/www/web
+```
+
+Estableix el directori base del contingut. Una petició a `/imatges/logo.png` correspon habitualment a `/var/www/web/imatges/logo.png`.
+
+</details>
+
+<details class="command-card" markdown="1">
+<summary><code>ServerName</code><span class="command-description">Indicar el nom del lloc web</span></summary>
+
+```apache
+ServerName web.exemple.test
+```
+
+Apache utilitza aquest nom per seleccionar el lloc entre els virtual hosts de la mateixa IP i port, segons el nom demanat pel client.
+
+La directiva no crea el nom al DNS: el client ha de poder resoldre’l a la IP del servidor.
+
+</details>
+
+<details class="command-card" markdown="1">
 <summary><code>&lt;Directory "/ruta"&gt;</code><span class="command-description">Agrupar les regles d’un directori del servidor</span></summary>
 
 Aplica les directives que conté a una ruta del sistema de fitxers.
@@ -78,46 +118,6 @@ Quan es demana una URL de directori, com `/` o `/materials/`, Apache busca aques
 </details>
 
 <details class="command-card" markdown="1">
-<summary><code>&lt;VirtualHost IP:port&gt;</code><span class="command-description">Agrupar les directives d’un lloc web</span></summary>
-
-Defineix un lloc per a una adreça IP i un port.
-
-```apache
-<VirtualHost *:80>
-    ServerName web.exemple.test
-    DocumentRoot /var/www/web
-</VirtualHost>
-```
-
-`*:80` indica les adreces locals aplicables al port `80`. També es pot indicar una IP concreta: `<VirtualHost 192.168.56.10:80>`. Apache ha d’estar escoltant en aquell port; el bloc no l’obre per si mateix.
-
-</details>
-
-<details class="command-card" markdown="1">
-<summary><code>DocumentRoot</code><span class="command-description">Indicar on són els fitxers del lloc web</span></summary>
-
-```apache
-DocumentRoot /var/www/web
-```
-
-Estableix el directori base del contingut. Una petició a `/imatges/logo.png` correspon habitualment a `/var/www/web/imatges/logo.png`.
-
-</details>
-
-<details class="command-card" markdown="1">
-<summary><code>ServerName</code><span class="command-description">Indicar el nom del lloc web</span></summary>
-
-```apache
-ServerName web.exemple.test
-```
-
-Apache utilitza aquest nom per seleccionar el lloc entre els virtual hosts de la mateixa IP i port, segons el nom demanat pel client.
-
-La directiva no crea el nom al DNS: el client ha de poder resoldre’l a la IP del servidor.
-
-</details>
-
-<details class="command-card" markdown="1">
 <summary><code>Alias</code><span class="command-description">Associar un camí de la URL amb un altre directori</span></summary>
 
 ```apache
@@ -127,6 +127,25 @@ Alias /materials/ /srv/materials/
 Una petició a `/materials/guia.pdf` correspon a `/srv/materials/guia.pdf`, encara que sigui fora del `DocumentRoot`.
 
 El directori també necessita l’autorització del seu bloc `Directory` i permisos de lectura adequats. Mantén les barres finals com a l’exemple.
+
+</details>
+
+<details class="command-card" markdown="1">
+<summary><code>&lt;Location "/cami"&gt;</code><span class="command-description">Aplicar regles a un camí de la URL</span></summary>
+
+`Location` agrupa directives per a un camí demanat pel client, encara que no correspongui a un directori real.
+
+```apache
+<Location "/privat">
+    Require all denied
+</Location>
+```
+
+Aquest exemple denega l’accés a `/privat` i als seus camins inferiors, com `/privat/informe`.
+
+**`Directory` actua sobre una ruta del sistema de fitxers; `Location`, sobre un camí de la URL.** Per protegir un directori real independentment de la URL utilitzada, s’utilitza `Directory`.
+
+[Documentació de Location](https://httpd.apache.org/docs/2.4/mod/core.html#location).
 
 </details>
 
@@ -143,7 +162,7 @@ Quan no es troba un recurs, Apache mostra aquesta pàgina local mantenint el cod
 
 ### Fitxer de lloc amb les directives bàsiques
 
-[![Fitxer web.conf d’Apache amb cada directiva d’un color diferent i la seva utilitat al costat: VirtualHost, ServerName, DocumentRoot, DirectoryIndex, Directory, Require, Options amb -Indexes, Alias i ErrorDocument.](../assets/images/apache-site-directives.svg)](../assets/images/apache-site-directives.svg)
+[![Fitxer web.conf d’Apache amb cada directiva d’un color diferent i la seva utilitat al costat: VirtualHost, DocumentRoot, ServerName, Directory, Require, Options amb -Indexes, DirectoryIndex, Alias, Location i ErrorDocument.](../assets/images/apache-site-directives.svg)](../assets/images/apache-site-directives.svg)
 
 *Clica el gràfic per obrir-lo a mida completa i ampliar-lo.*
 

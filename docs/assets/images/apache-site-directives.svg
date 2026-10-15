@@ -1,21 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1320" viewBox="0 0 1500 1320" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1560" viewBox="0 0 1500 1560" role="img" aria-labelledby="title description">
   <title id="title">Fitxer d’un lloc Apache amb les directives bàsiques explicades</title>
-  <desc id="description">Exemple de /etc/apache2/sites-available/web.conf. Cada directiva té un color propi i una explicació al costat: VirtualHost, ServerName, DocumentRoot, DirectoryIndex, Directory, Require, Options amb -Indexes, Alias i ErrorDocument. El directori principal i el dels materials permeten l’accés sense mostrar llistats. No s’hi afegeixen altres directives.</desc>
+  <desc id="description">Exemple de /etc/apache2/sites-available/web.conf. Cada directiva té un color propi i una explicació al costat: VirtualHost, DocumentRoot, ServerName, Directory, Require, Options amb -Indexes, DirectoryIndex, Alias, Location i ErrorDocument. El directori principal i el dels materials permeten l’accés sense mostrar llistats. Location denega l’accés al camí URL /privat i als seus camins inferiors. No s’hi afegeixen altres directives.</desc>
   <metadata id="site-config">&lt;VirtualHost *:80&gt;
-    ServerName web.exemple.test
     DocumentRoot /var/www/web
-    DirectoryIndex index.html index.htm
+    ServerName web.exemple.test
 
     &lt;Directory &quot;/var/www/web&quot;&gt;
         Require all granted
         Options -Indexes
     &lt;/Directory&gt;
+    DirectoryIndex index.html index.htm
 
     Alias /materials/ /srv/materials/
     &lt;Directory &quot;/srv/materials&quot;&gt;
         Require all granted
         Options -Indexes
     &lt;/Directory&gt;
+
+    &lt;Location &quot;/privat&quot;&gt;
+        Require all denied
+    &lt;/Location&gt;
 
     ErrorDocument 404 /errors/404.html
 &lt;/VirtualHost&gt;</metadata>
@@ -30,17 +34,18 @@
     .documentroot { fill: #276427; }
     .directoryindex { fill: #9b4610; }
     .directory { fill: #b0264c; }
+    .location { fill: #7a4b00; }
     .require { fill: #006b66; }
     .options { fill: #6b6200; }
     .alias { fill: #3f51a6; }
     .errordocument { fill: #8d3d78; }
   </style>
-  <rect x="1" y="1" width="1498" height="1318" rx="18" fill="#fafbfc" stroke="#d6dce2" stroke-width="2"/>
+  <rect x="1" y="1" width="1498" height="1558" rx="18" fill="#fafbfc" stroke="#d6dce2" stroke-width="2"/>
   <text x="32" y="54" font-size="34" font-weight="700" style="fill:#163a52">Un fitxer de lloc Apache, directiva a directiva</text>
   <text x="55" y="108" font-size="24" font-weight="600">/etc/apache2/sites-available/web.conf</text>
   <text x="920" y="108" font-size="24" font-weight="600">Utilitat</text>
-  <rect x="32" y="125" width="840" height="1100" rx="12" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
-  <path d="M 87 145 V 1205" stroke="#e3e7ec" stroke-width="2"/>
+  <rect x="32" y="125" width="840" height="1340" rx="12" fill="#fff" stroke="#d6dce2" stroke-width="2"/>
+  <path d="M 87 145 V 1445" stroke="#e3e7ec" stroke-width="2"/>
   <text class="line-number" x="73" y="180">1</text>
   <text class="code virtualhost" xml:space="preserve" x="106" y="180">&lt;VirtualHost *:80&gt;</text>
   <g class="annotation" data-directive="virtualhost">
@@ -50,57 +55,57 @@
     <text class="note-body" x="920" y="202">Agrupa el lloc per a les IP locals, port 80.</text>
   </g>
   <text class="line-number" x="73" y="240">2</text>
-  <text class="code servername" xml:space="preserve" x="106" y="240">    ServerName web.exemple.test</text>
-  <g class="annotation" data-directive="servername">
-    <path d="M 845 233 H 903" fill="none" stroke="#17689b" stroke-width="2"/>
-    <circle cx="903" cy="233" r="4" fill="#17689b"/>
-    <text class="note-title servername" x="920" y="232">ServerName</text>
-    <text class="note-body" x="920" y="262">Nom amb què el client demana el lloc.</text>
+  <text class="code documentroot" xml:space="preserve" x="106" y="240">    DocumentRoot /var/www/web</text>
+  <g class="annotation" data-directive="documentroot">
+    <path d="M 845 233 H 903" fill="none" stroke="#276427" stroke-width="2"/>
+    <circle cx="903" cy="233" r="4" fill="#276427"/>
+    <text class="note-title documentroot" x="920" y="232">DocumentRoot</text>
+    <text class="note-body" x="920" y="262">Directori base dels fitxers de la web.</text>
   </g>
   <text class="line-number" x="73" y="300">3</text>
-  <text class="code documentroot" xml:space="preserve" x="106" y="300">    DocumentRoot /var/www/web</text>
-  <g class="annotation" data-directive="documentroot">
-    <path d="M 845 293 H 903" fill="none" stroke="#276427" stroke-width="2"/>
-    <circle cx="903" cy="293" r="4" fill="#276427"/>
-    <text class="note-title documentroot" x="920" y="292">DocumentRoot</text>
-    <text class="note-body" x="920" y="322">Directori base dels fitxers de la web.</text>
+  <text class="code servername" xml:space="preserve" x="106" y="300">    ServerName web.exemple.test</text>
+  <g class="annotation" data-directive="servername">
+    <path d="M 845 293 H 903" fill="none" stroke="#17689b" stroke-width="2"/>
+    <circle cx="903" cy="293" r="4" fill="#17689b"/>
+    <text class="note-title servername" x="920" y="292">ServerName</text>
+    <text class="note-body" x="920" y="322">Nom amb què el client demana el lloc.</text>
   </g>
   <text class="line-number" x="73" y="360">4</text>
-  <text class="code directoryindex" xml:space="preserve" x="106" y="360">    DirectoryIndex index.html index.htm</text>
-  <g class="annotation" data-directive="directoryindex">
-    <path d="M 845 353 H 903" fill="none" stroke="#9b4610" stroke-width="2"/>
-    <circle cx="903" cy="353" r="4" fill="#9b4610"/>
-    <text class="note-title directoryindex" x="920" y="352">DirectoryIndex</text>
-    <text class="note-body" x="920" y="382">Busca primer index.html i després index.htm.</text>
-  </g>
   <text class="line-number" x="73" y="420">5</text>
-  <text class="line-number" x="73" y="480">6</text>
-  <text class="code directory" xml:space="preserve" x="106" y="480">    &lt;Directory &quot;/var/www/web&quot;&gt;</text>
+  <text class="code directory" xml:space="preserve" x="106" y="420">    &lt;Directory &quot;/var/www/web&quot;&gt;</text>
   <g class="annotation" data-directive="directory">
-    <path d="M 845 473 H 903" fill="none" stroke="#b0264c" stroke-width="2"/>
-    <circle cx="903" cy="473" r="4" fill="#b0264c"/>
-    <text class="note-title directory" x="920" y="472">Directory</text>
-    <text class="note-body" x="920" y="502">Agrupa les regles d’aquest directori real.</text>
+    <path d="M 845 413 H 903" fill="none" stroke="#b0264c" stroke-width="2"/>
+    <circle cx="903" cy="413" r="4" fill="#b0264c"/>
+    <text class="note-title directory" x="920" y="412">Directory</text>
+    <text class="note-body" x="920" y="442">Agrupa les regles d’aquest directori real.</text>
+  </g>
+  <text class="line-number" x="73" y="480">6</text>
+  <text class="code require" xml:space="preserve" x="106" y="480">        Require all granted</text>
+  <g class="annotation" data-directive="require">
+    <path d="M 845 473 H 903" fill="none" stroke="#006b66" stroke-width="2"/>
+    <circle cx="903" cy="473" r="4" fill="#006b66"/>
+    <text class="note-title require" x="920" y="472">Require</text>
+    <text class="note-body" x="920" y="502">Permet l’accés a tothom.</text>
   </g>
   <text class="line-number" x="73" y="540">7</text>
-  <text class="code require" xml:space="preserve" x="106" y="540">        Require all granted</text>
-  <g class="annotation" data-directive="require">
-    <path d="M 845 533 H 903" fill="none" stroke="#006b66" stroke-width="2"/>
-    <circle cx="903" cy="533" r="4" fill="#006b66"/>
-    <text class="note-title require" x="920" y="532">Require</text>
-    <text class="note-body" x="920" y="562">Permet l’accés a tothom.</text>
+  <text class="code options" xml:space="preserve" x="106" y="540">        Options -Indexes</text>
+  <g class="annotation" data-directive="options">
+    <path d="M 845 533 H 903" fill="none" stroke="#6b6200" stroke-width="2"/>
+    <circle cx="903" cy="533" r="4" fill="#6b6200"/>
+    <text class="note-title options" x="920" y="532">Options · -Indexes</text>
+    <text class="note-body" x="920" y="562">Desactiva el llistat automàtic de fitxers.</text>
   </g>
   <text class="line-number" x="73" y="600">8</text>
-  <text class="code options" xml:space="preserve" x="106" y="600">        Options -Indexes</text>
-  <g class="annotation" data-directive="options">
-    <path d="M 845 593 H 903" fill="none" stroke="#6b6200" stroke-width="2"/>
-    <circle cx="903" cy="593" r="4" fill="#6b6200"/>
-    <text class="note-title options" x="920" y="592">Options · -Indexes</text>
-    <text class="note-body" x="920" y="622">Desactiva el llistat automàtic de fitxers.</text>
-  </g>
+  <text class="code directory" xml:space="preserve" x="106" y="600">    &lt;/Directory&gt;</text>
+  <text class="directory" x="920" y="600" font-size="19">Tanca el bloc Directory.</text>
   <text class="line-number" x="73" y="660">9</text>
-  <text class="code directory" xml:space="preserve" x="106" y="660">    &lt;/Directory&gt;</text>
-  <text class="directory" x="920" y="660" font-size="19">Tanca el bloc Directory.</text>
+  <text class="code directoryindex" xml:space="preserve" x="106" y="660">    DirectoryIndex index.html index.htm</text>
+  <g class="annotation" data-directive="directoryindex">
+    <path d="M 845 653 H 903" fill="none" stroke="#9b4610" stroke-width="2"/>
+    <circle cx="903" cy="653" r="4" fill="#9b4610"/>
+    <text class="note-title directoryindex" x="920" y="652">DirectoryIndex</text>
+    <text class="note-body" x="920" y="682">Busca primer index.html i després index.htm.</text>
+  </g>
   <text class="line-number" x="73" y="720">10</text>
   <text class="line-number" x="73" y="780">11</text>
   <text class="code alias" xml:space="preserve" x="106" y="780">    Alias /materials/ /srv/materials/</text>
@@ -139,16 +144,36 @@
   <text class="directory" x="920" y="1020" font-size="19">Tanca el bloc Directory.</text>
   <text class="line-number" x="73" y="1080">16</text>
   <text class="line-number" x="73" y="1140">17</text>
-  <text class="code errordocument" xml:space="preserve" x="106" y="1140">    ErrorDocument 404 /errors/404.html</text>
-  <g class="annotation" data-directive="errordocument">
-    <path d="M 845 1133 H 903" fill="none" stroke="#8d3d78" stroke-width="2"/>
-    <circle cx="903" cy="1133" r="4" fill="#8d3d78"/>
-    <text class="note-title errordocument" x="920" y="1132">ErrorDocument</text>
-    <text class="note-body" x="920" y="1162">Mostra la pàgina local; manté el codi 404.</text>
+  <text class="code location" xml:space="preserve" x="106" y="1140">    &lt;Location &quot;/privat&quot;&gt;</text>
+  <g class="annotation" data-directive="location">
+    <path d="M 845 1133 H 903" fill="none" stroke="#7a4b00" stroke-width="2"/>
+    <circle cx="903" cy="1133" r="4" fill="#7a4b00"/>
+    <text class="note-title location" x="920" y="1132">Location</text>
+    <text class="note-body" x="920" y="1162">Regles del camí URL /privat i dels inferiors.</text>
   </g>
   <text class="line-number" x="73" y="1200">18</text>
-  <text class="code virtualhost" xml:space="preserve" x="106" y="1200">&lt;/VirtualHost&gt;</text>
-  <text class="virtualhost" x="920" y="1200" font-size="19">Tanca el bloc VirtualHost.</text>
-  <text x="32" y="1262" font-size="21" font-weight="600">Un mateix color identifica la mateixa directiva en tot el fitxer. Indexes és una opció d’Options.</text>
-  <text x="32" y="1296" font-size="20" style="fill:#435967">Els directoris i la pàgina /errors/404.html han d’existir i ser accessibles; el nom ha de resoldre al servidor.</text>
+  <text class="code require" xml:space="preserve" x="106" y="1200">        Require all denied</text>
+  <g class="annotation" data-directive="require">
+    <path d="M 845 1193 H 903" fill="none" stroke="#006b66" stroke-width="2"/>
+    <circle cx="903" cy="1193" r="4" fill="#006b66"/>
+    <text class="note-title require" x="920" y="1192">Require</text>
+    <text class="note-body" x="920" y="1222">Denega l’accés a aquest camí URL.</text>
+  </g>
+  <text class="line-number" x="73" y="1260">19</text>
+  <text class="code location" xml:space="preserve" x="106" y="1260">    &lt;/Location&gt;</text>
+  <text class="location" x="920" y="1260" font-size="19">Tanca el bloc Location.</text>
+  <text class="line-number" x="73" y="1320">20</text>
+  <text class="line-number" x="73" y="1380">21</text>
+  <text class="code errordocument" xml:space="preserve" x="106" y="1380">    ErrorDocument 404 /errors/404.html</text>
+  <g class="annotation" data-directive="errordocument">
+    <path d="M 845 1373 H 903" fill="none" stroke="#8d3d78" stroke-width="2"/>
+    <circle cx="903" cy="1373" r="4" fill="#8d3d78"/>
+    <text class="note-title errordocument" x="920" y="1372">ErrorDocument</text>
+    <text class="note-body" x="920" y="1402">Mostra la pàgina local; manté el codi 404.</text>
+  </g>
+  <text class="line-number" x="73" y="1440">22</text>
+  <text class="code virtualhost" xml:space="preserve" x="106" y="1440">&lt;/VirtualHost&gt;</text>
+  <text class="virtualhost" x="920" y="1440" font-size="19">Tanca el bloc VirtualHost.</text>
+  <text x="32" y="1502" font-size="21" font-weight="600">Un mateix color identifica la mateixa directiva en tot el fitxer. Indexes és una opció d’Options.</text>
+  <text x="32" y="1536" font-size="20" style="fill:#435967">Els directoris i la pàgina /errors/404.html han d’existir i ser accessibles; el nom ha de resoldre al servidor.</text>
 </svg>
