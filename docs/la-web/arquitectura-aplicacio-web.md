@@ -691,61 +691,111 @@ La taula recapitula les explicacions i fonts dels apartats anteriors.
 
 Una aplicació té presentació, negoci i accés a dades dins d’un únic procés. Té tres capes?
 
-**Solució:** pot tenir-ne tres de lògiques si les responsabilitats i dependències estan separades. No necessita tres servidors.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+Pot tenir-ne tres de lògiques si les responsabilitats i dependències estan separades. No necessita tres servidors.
+
+</details>
 
 ### Exercici 2. Presentació al servidor
 
 Una plantilla genera HTML al servidor. Forma part de la presentació?
 
-**Solució:** sí. La presentació també inclou preparació i generació de la vista al servidor.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+Sí. La presentació també inclou preparació i generació de la vista al servidor.
+
+</details>
 
 ### Exercici 3. Client amb molta interacció
 
 Una SPA utilitza una API que valida reserves. És necessàriament un model clàssic de client pesant connectat directament a dades?
 
-**Solució:** no. El volum d’interacció del navegador no elimina la capa de procés al servidor.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. El volum d’interacció del navegador no elimina la capa de procés al servidor.
+
+</details>
 
 ### Exercici 4. MVC
 
 Un sistema té model, vista i controlador. Podem afirmar que té tres nivells físics?
 
-**Solució:** no. Els tres elements poden executar-se dins del mateix procés.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. Els tres elements poden executar-se dins del mateix procés.
+
+</details>
 
 ### Exercici 5. Doble reserva
 
 Dues persones consulten disponibilitat i totes dues intenten reservar. N’hi ha prou amb haver mostrat un botó només quan l’exemplar estava lliure?
 
-**Solució:** no. El servidor ha de coordinar la comprovació i el canvi sota garanties de concurrència i integritat.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. El servidor ha de coordinar la comprovació i el canvi sota garanties de concurrència i integritat.
+
+</details>
 
 ### Exercici 6. Reintent després d’una desconnexió
 
 El navegador perd la connexió abans de rebre la resposta. Pot afirmar que la reserva no s’ha creat?
 
-**Solució:** no. Cal consultar el resultat o reintentar sota el contracte d’identificació d’operacions, evitant duplicats.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. Cal consultar el resultat o reintentar sota el contracte d’identificació d’operacions, evitant duplicats.
+
+</details>
 
 ### Exercici 7. Monòlit i escala
 
 Es despleguen quatre còpies del mateix monòlit modular. S’ha convertit en quatre microserveis?
 
-**Solució:** no. Són quatre instàncies de la mateixa unitat funcional, no quatre serveis amb responsabilitats independents.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. Són quatre instàncies de la mateixa unitat funcional, no quatre serveis amb responsabilitats independents.
+
+</details>
 
 ### Exercici 8. Notificació
 
 La reserva està confirmada però l’enviament de correu falla. És correcte informar que la reserva no existeix?
 
-**Solució:** no. Cal distingir el resultat de negoci de la notificació. Un registre durable de feina pendent permet reintentar la comunicació.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. Cal distingir el resultat de negoci de la notificació. Un registre durable de feina pendent permet reintentar la comunicació.
+
+</details>
 
 ### Exercici 9. Classificar una decisió
 
 «Generarem el catàleg com a HTML estàtic i enviarem les reserves a una API». Quins eixos s’hi descriuen?
 
-**Solució:** la generació de la presentació i la interfície de comunicació. Encara falta descriure les capes internes i el desplegament.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+La generació de la presentació i la interfície de comunicació. Encara falta descriure les capes internes i el desplegament.
+
+</details>
 
 ### Exercici 10. Autorització
 
 El client envia `usuariId=5` i demana veure les reserves d’aquesta persona. S’ha d’acceptar l’identificador com a prova d’identitat?
 
-**Solució:** no. El servei ha d’establir la identitat amb un mecanisme validat i comprovar el permís sobre les dades demanades.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. El servei ha d’establir la identitat amb un mecanisme validat i comprovar el permís sobre les dades demanades.
+
+</details>
 
 ## 13. Glossari
 

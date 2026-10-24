@@ -725,49 +725,89 @@ La taula recapitula les explicacions i referències dels apartats anteriors.
 
 Un navegador parla amb un proxy invers que consulta una aplicació. Quin rol fa el proxy?
 
-**Solució:** actua com a servidor davant del navegador i com a client davant de l’aplicació. No cal que emmagatzemi respostes.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+Actua com a servidor davant del navegador i com a client davant de l’aplicació. No cal que emmagatzemi respostes.
+
+</details>
 
 ### Exercici 2. Rastreig i indexació
 
 S’ha bloquejat `/materials/` a `robots.txt`. Això garanteix que les adreces no apareguin en un cercador?
 
-**Solució:** no. El bloqueig de rastreig no equival a exclusió de l’índex. El cercador pot descobrir URL per altres fonts. Perquè un robot llegeixi `noindex`, ha de poder recuperar la resposta; per protegir informació cal autorització real.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. El bloqueig de rastreig no equival a exclusió de l’índex. El cercador pot descobrir URL per altres fonts. Perquè un robot llegeixi `noindex`, ha de poder recuperar la resposta; per protegir informació cal autorització real.
+
+</details>
 
 ### Exercici 3. Cookies i seguretat
 
 Amagar al navegador el botó «Edita» és suficient per impedir modificacions?
 
-**Solució:** no. El servidor ha de comprovar els permisos quan rep la petició de modificació. La interfície no substitueix l’autorització.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. El servidor ha de comprovar els permisos quan rep la petició de modificació. La interfície no substitueix l’autorització.
+
+</details>
 
 ### Exercici 4. no-cache o no-store
 
 Es vol conservar el cos d’un document i consultar si ha canviat abans de reutilitzar-lo. Quina directiva s’hi ajusta?
 
-**Solució:** `no-cache`, acompanyada de validadors si es vol aprofitar la revalidació condicional. `no-store` impediria l’emmagatzematge HTTP.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+`no-cache`, acompanyada de validadors si es vol aprofitar la revalidació condicional. `no-store` impediria l’emmagatzematge HTTP.
+
+</details>
 
 ### Exercici 5. Frescor privada i compartida
 
 Una resposta té `max-age=60, s-maxage=300` i edat de 90 segons. És fresca?
 
-**Solució:** per a la memòria cau privada, ja no: 90 ≥ 60. Per a la compartida, sí: 90 < 300. Li resten aproximadament 210 segons de frescor compartida, assumint que no hi ha altres restriccions.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+Per a la memòria cau privada, ja no: 90 ≥ 60. Per a la compartida, sí: 90 < 300. Li resten aproximadament 210 segons de frescor compartida, assumint que no hi ha altres restriccions.
+
+</details>
 
 ### Exercici 6. Revalidació i transferència
 
 Un client envia `If-None-Match: "v7"` i rep `304 Not Modified`. Ha de descarregar de nou el cos?
 
-**Solució:** no. Utilitza la representació que ja tenia i actualitza les metadades pertinents. Sí que hi ha hagut un intercanvi de xarxa.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. Utilitza la representació que ja tenia i actualitza les metadades pertinents. Sí que hi ha hagut un intercanvi de xarxa.
+
+</details>
 
 ### Exercici 7. Variants
 
 Una URL retorna HTML en català o anglès segons `Accept-Language`. Quina capçalera ajuda a separar variants?
 
-**Solució:** `Vary: Accept-Language`. Això no resol per si sol la personalització per usuari.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+`Vary: Accept-Language`. Això no resol per si sol la personalització per usuari.
+
+</details>
 
 ### Exercici 8. Mesurar l’estalvi
 
 Hi ha 500 consultes d’un recurs de 200 kB. El 70% es resol sense consultar l’origen. Quants bytes de cos es demanen a l’origen?
 
-**Solució:** el 30% de 500 són 150 consultes. 150 × 200 kB = 30.000 kB = 30 MB decimals. Sense memòria cau serien 100 MB; l’estalvi d’aquest tram és del 70%, sota les simplificacions de l’exercici.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+El 30% de 500 són 150 consultes. 150 × 200 kB = 30.000 kB = 30 MB decimals. Sense memòria cau serien 100 MB; l’estalvi d’aquest tram és del 70%, sota les simplificacions de l’exercici.
+
+</details>
 
 ## 10. Glossari
 

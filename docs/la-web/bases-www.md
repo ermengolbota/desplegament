@@ -718,38 +718,68 @@ Analitza:
 https://example.org:8443/apunts/tema%201.html?q=C%2B%2B#resum
 ```
 
-**Solució:** esquema `https`; autoritat `example.org:8443`; amfitrió `example.org`; port `8443`; camí `/apunts/tema%201.html`; consulta `q=C%2B%2B`; fragment `resum`. Amb un analitzador de formularis, el valor de `q` és `C++`. El fragment no s’envia com a part de la destinació HTTP.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+Esquema `https`; autoritat `example.org:8443`; amfitrió `example.org`; port `8443`; camí `/apunts/tema%201.html`; consulta `q=C%2B%2B`; fragment `resum`. Amb un analitzador de formularis, el valor de `q` és `C++`. El fragment no s’envia com a part de la destinació HTTP.
+
+</details>
 
 ### Exercici 2. Resoldre una referència
 
 Base: `https://example.org/materials/web/index.html`.
 Referència: `../imatges/logo.svg`.
 
-**Solució:** `https://example.org/materials/imatges/logo.svg`.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+`https://example.org/materials/imatges/logo.svg`.
+
+</details>
 
 ### Exercici 3. Codificar un valor de formulari
 
 Construeix la parella `q` per al text `a+b & cafè`.
 
-**Solució:** `q=a%2Bb+%26+caf%C3%A8`. El més literal és `%2B`; els espais són `+`; l’ampersand és `%26`; `è` es representa amb els bytes UTF-8 `C3 A8`.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+`q=a%2Bb+%26+caf%C3%A8`. El més literal és `%2B`; els espais són `+`; l’ampersand és `%26`; `è` es representa amb els bytes UTF-8 `C3 A8`.
+
+</details>
 
 ### Exercici 4. Distingir dos camins
 
 Són automàticament equivalents `/tema+1` i `/tema%201`?
 
-**Solució:** no. El primer conté un més literal i el segon representa un espai. La regla que converteix `+` en espai pertany al format de formularis.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. El primer conté un més literal i el segon representa un espai. La regla que converteix `+` en espai pertany al format de formularis.
+
+</details>
 
 ### Exercici 5. Identificació i accés
 
 Què permet afirmar `urn:isbn:9780131103627`?
 
-**Solució:** identifica un recurs dins de l’espai de noms ISBN. No proporciona per si sol una URL de descàrrega ni garanteix disponibilitat pública.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+Identifica un recurs dins de l’espai de noms ISBN. No proporciona per si sol una URL de descàrrega ni garanteix disponibilitat pública.
+
+</details>
 
 ### Exercici 6. Separar formats
 
 És HTML el protocol que envia una pàgina al navegador?
 
-**Solució:** no. HTML és un llenguatge de marques. HTTP és el protocol de peticions i respostes; HTTPS hi afegeix protecció del transport.
+<details class="command-card" markdown="1">
+<summary>Solució</summary>
+
+No. HTML és un llenguatge de marques. HTTP és el protocol de peticions i respostes; HTTPS hi afegeix protecció del transport.
+
+</details>
 
 ## 12. Glossari
 
