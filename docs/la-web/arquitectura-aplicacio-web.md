@@ -348,11 +348,11 @@ Fonts: [MDN, SSR](https://developer.mozilla.org/en-US/docs/Glossary/SSR), [MDN, 
 
 La **hidratació** connecta comportament del client amb HTML generat prèviament. Per exemple, una interfície pot arribar com a HTML del servidor i adquirir després gestors d’esdeveniments.
 
-La documentació de React descriu aquest mecanisme amb `hydrateRoot`. És un exemple d’implementació, no una obligació d’utilitzar React per construir una aplicació web.
+La documentació de Vue descriu aquest mecanisme amb una aplicació creada amb `createSSRApp` i muntada sobre l’HTML existent. És un exemple d’implementació, no una obligació d’utilitzar Vue per construir una aplicació web. En projectes amb renderització al servidor, Nuxt ofereix aquesta integració de manera habitual.
 
 La tria de renderització no decideix automàticament on viuen les regles de negoci. Una pàgina generada estàticament pot enviar una reserva a una API; una SPA pot recolzar-se en un servei amb tres capes internes.
 
-Referència: [React, hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot).
+Referències: [Vue, hydration](https://vuejs.org/guide/scaling-up/ssr.html#client-hydration) i [Nuxt, rendering modes](https://nuxt.com/docs/guide/concepts/rendering).
 
 ## 8. Formes actuals d’organitzar i executar l’aplicació
 
@@ -818,7 +818,7 @@ El client envia `usuariId=5` i demana veure les reserves d’aquesta persona. S�
 - [MDN: SSR](https://developer.mozilla.org/en-US/docs/Glossary/SSR).
 - [MDN: CSR](https://developer.mozilla.org/en-US/docs/Glossary/CSR).
 - [MDN: SSG](https://developer.mozilla.org/en-US/docs/Glossary/SSG).
-- [React: hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot). Exemple oficial d’un mecanisme d’hidratació.
+- [Vue: Client Hydration](https://vuejs.org/guide/scaling-up/ssr.html#client-hydration). Exemple oficial d’un mecanisme d’hidratació.
 
 ### Distribució, execució i reintents
 
@@ -843,6 +843,6 @@ El client envia `usuariId=5` i demana veure les reserves d’aquesta persona. S�
 - [W3C: Web Content Accessibility Guidelines 2.2](https://www.w3.org/TR/WCAG22/).
 - [OpenTelemetry: Observability primer](https://opentelemetry.io/docs/concepts/observability-primer/).
 
-Els RFC i les especificacions aporten el marc pertinent als protocols i formats. MDN ofereix documentació didàctica. Les guies de Microsoft, AWS, React i PostgreSQL descriuen criteris o implementacions concretes; els seus detalls no s’han d’extrapolar automàticament a tots els productes.
+Els RFC i les especificacions aporten el marc pertinent als protocols i formats. MDN ofereix documentació didàctica. Les guies de Microsoft, AWS, Vue i PostgreSQL descriuen criteris o implementacions concretes; els seus detalls no s’han d’extrapolar automàticament a tots els productes.
 
 
