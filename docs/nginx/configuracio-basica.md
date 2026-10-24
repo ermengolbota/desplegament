@@ -110,7 +110,7 @@ server {
 ### Fitxers estàtics
 
 <details class="command-card" markdown="1">
-<summary><code>root</code>, <code>index</code><span class="command-description">Indicar el directori públic i la pàgina d’inici</span></summary>
+<summary><code>root</code>, <code>index</code>, <code>autoindex</code><span class="command-description">Indicar el directori públic, la pàgina d’inici i els llistats</span></summary>
 
 ```nginx
 root /var/www/web;
@@ -118,6 +118,18 @@ index index.html;
 ```
 
 Una petició a `/imatges/logo.png` correspon a `/var/www/web/imatges/logo.png`. En demanar un directori, `index` indica la pàgina d’inici que s’intenta servir.
+
+`autoindex` controla si NGINX mostra un llistat dels fitxers quan es demana un directori que no conté cap fitxer d’índex. Està desactivat per defecte. Per activar-lo només en un directori concret:
+
+```nginx
+location /descarregues/ {
+    autoindex on;
+    autoindex_exact_size off;
+    autoindex_localtime on;
+}
+```
+
+`autoindex_exact_size off` mostra mides més llegibles i `autoindex_localtime on` mostra les dates en l’hora local del servidor. No convé activar `autoindex` a tota l’arrel del lloc si el directori pot contenir fitxers privats o de configuració.
 
 Aquest directori conté només fitxers estàtics públics, com HTML, CSS, JavaScript i imatges. Els fitxers PHP de l’aplicació es desen i s’executen al servidor Apache.
 
